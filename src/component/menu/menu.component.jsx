@@ -5,7 +5,7 @@ export const Menu = () => {
 
   return (
     <MS.Menu>
-      menu
+      <MS.CompanyName>Bet<MS.On>On</MS.On>Me</MS.CompanyName>
     </MS.Menu>
   )
 }
