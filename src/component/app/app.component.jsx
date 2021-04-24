@@ -1,10 +1,11 @@
 import React from 'react'
+import { Menu } from '../menu'
 
 const App = () => {
 
   return(
     <div>
-      aplicatie
+      <Menu />
     </div>
   )
 }
