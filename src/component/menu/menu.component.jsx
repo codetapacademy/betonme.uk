@@ -5,7 +5,7 @@ export const Menu = () => {
 
   return (
     <MS.Menu>
-      <i className='bet-on-memenu'></i>
+      <MS.Hamburger className='bet-on-memenu'></MS.Hamburger>
       <MS.CompanyName>Bet<MS.On>On</MS.On>Me</MS.CompanyName>
     </MS.Menu>
   )

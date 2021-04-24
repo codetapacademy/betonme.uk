@@ -19,3 +19,10 @@ export const On = styled.span`
   background-color: #ffd613;
   color: #fff;
 `
+
+export const Hamburger = styled.i`
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+`
