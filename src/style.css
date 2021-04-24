@@ -10,9 +10,9 @@ body {
 @font-face {
   font-family: 'bet-on-me';
   src:
-    url('fonts/bet-on-me.ttf?or5w7m') format('truetype'),
-    url('fonts/bet-on-me.woff?or5w7m') format('woff'),
-    url('fonts/bet-on-me.svg?or5w7m#bet-on-me') format('svg');
+    url('./asset/font/bet-on-me.ttf?or5w7m') format('truetype'),
+    url('./asset/font/bet-on-me.woff?or5w7m') format('woff'),
+    url('./asset/font/bet-on-me.svg?or5w7m#bet-on-me') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
