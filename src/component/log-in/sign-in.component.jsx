@@ -22,6 +22,13 @@ export const SignIn = ({closeSignIn}) => {
         <SIS.Separator>
           <SIS.SeparatorText>or</SIS.SeparatorText>
         </SIS.Separator>
+        <SIS.StyledInput type='email' placeholder='Email address'/>
+        <SIS.StyledInput type='password' placeholder='Password'/>
+        <SIS.SignInButton>Sign In</SIS.SignInButton>
+        <SIS.footerText>
+          Not a member yet?
+          <SIS.footerLink href='#'>Sign Up.</SIS.footerLink>
+        </SIS.footerText>
       </SIS.SignInCard>
     </SIS.SignInContainer>
   )
