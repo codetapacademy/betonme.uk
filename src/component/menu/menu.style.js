@@ -4,13 +4,14 @@ export const Menu = styled.div`
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   display: flex;
-  padding: 5px;
   position: fixed;
+  align-items: center;
   justify-content: space-around;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+  height: 10vh;
 `
 export const CompanyName = styled.h1`
   font-weight: bold;
@@ -50,4 +51,16 @@ export const SignInButton = styled.button`
 
 export const SpaceAfterMenu = styled.div`
   margin-top: 100px;
+`
+
+//Sidebar
+
+export const SideBarNav = styled.div`
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  height: 100vh;
+  width: 40vw;
+  background-color: #fff;
 `

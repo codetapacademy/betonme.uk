@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import * as MS from './menu.style'
 
 export const Menu = () => {
@@ -10,6 +10,7 @@ export const Menu = () => {
         <MS.CompanyName>Bet<MS.On>On</MS.On>Me</MS.CompanyName>
         <MS.SignInButton>Sign In</MS.SignInButton>
       </MS.Menu>
+      <MS.SideBarNav></MS.SideBarNav>
       <MS.SpaceAfterMenu></MS.SpaceAfterMenu>
     </>
   )
