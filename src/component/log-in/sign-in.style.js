@@ -12,3 +12,11 @@ export const SignInContainer = styled.div`
   bottom: 0;
   left: 0;
 `
+
+export const SignInCard = styled.div`
+  width: 40vw;
+  height: 40vw;
+  background-color: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+`

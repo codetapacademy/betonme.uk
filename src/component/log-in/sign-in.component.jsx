@@ -4,8 +4,10 @@ import * as SIS from './sign-in.style'
 export const SignIn = () => {
 
   return(
-    <div>
-      Sign in
-    </div>
+    <SIS.SignInContainer>
+      <SIS.SignInCard>
+        Card
+      </SIS.SignInCard>
+    </SIS.SignInContainer>
   )
 }
