@@ -9,6 +9,7 @@ export const Menu = () => {
 
   const showSideBar = () => setSideBar(!sideBar);
   const showSignIn = () => setSignIn(!signIn);
+  const closeSignIn = () => setSignIn(!signIn);
 
   return (
     <>
@@ -24,7 +25,7 @@ export const Menu = () => {
           <MS.SideBarLink>Sell</MS.SideBarLink>
           <MS.SideBarLink>Contact</MS.SideBarLink>
         </MS.SideBarNav>}
-        {signIn && <SignIn />}
+        {signIn && <SignIn closeSignIn={closeSignIn}/>}
       <MS.SpaceAfterMenu></MS.SpaceAfterMenu>
     </>
   )
