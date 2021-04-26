@@ -19,6 +19,7 @@ export const Menu = () => {
           <MS.SideBarLink>Home</MS.SideBarLink>
           <MS.SideBarLink>Auctions</MS.SideBarLink>
           <MS.SideBarLink>Sell</MS.SideBarLink>
+          <MS.SideBarLink>Contact</MS.SideBarLink>
         </MS.SideBarNav>}
       <MS.SpaceAfterMenu></MS.SpaceAfterMenu>
     </>
