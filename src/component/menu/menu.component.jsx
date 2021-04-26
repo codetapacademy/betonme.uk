@@ -14,7 +14,12 @@ export const Menu = () => {
         <MS.CompanyName>Bet<MS.On>On</MS.On>Me</MS.CompanyName>
         <MS.SignInButton>Sign In</MS.SignInButton>
       </MS.Menu>
-      {sideBar && <MS.SideBarNav></MS.SideBarNav>}
+      {sideBar && 
+        <MS.SideBarNav>
+          <MS.SideBarLink>Home</MS.SideBarLink>
+          <MS.SideBarLink>Auctions</MS.SideBarLink>
+          <MS.SideBarLink>Sell</MS.SideBarLink>
+        </MS.SideBarNav>}
       <MS.SpaceAfterMenu></MS.SpaceAfterMenu>
     </>
   )

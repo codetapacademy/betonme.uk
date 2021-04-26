@@ -56,6 +56,7 @@ export const SpaceAfterMenu = styled.div`
 //Sidebar
 
 export const SideBarNav = styled.div`
+  padding-top: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 10vh;
@@ -63,4 +64,21 @@ export const SideBarNav = styled.div`
   height: 100vh;
   width: 40vw;
   background-color: #fff;
+`
+
+export const SideBarLink = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  display: inline-block;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  &:hover {
+    background-color: #ffd613;
+    color: #fff;
+  }
 `
