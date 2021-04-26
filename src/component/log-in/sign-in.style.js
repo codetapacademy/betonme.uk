@@ -1,4 +1,16 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const BasicButton = css`
+  border: none;
+  display: flex;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 2vh;
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(122, 122, 122);
+  align-items: center;
+`
 
 export const SignInContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.25);
@@ -20,6 +32,7 @@ export const SignInCard = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   position: relative;
+  padding: 50px 20px 20px 20px;
 `
 
 export const Cross = styled.i`
@@ -31,4 +44,32 @@ export const Cross = styled.i`
   color: #fff;
   border-radius: 6px;
   padding: 8px;
+`
+
+export const FacebookButton = styled.button`
+  ${ BasicButton }
+  background-color: #4267B2;
+  color: #fff;
+`
+
+export const GoogleButton = styled.button`
+ ${ BasicButton }
+  background-color: #fff;
+  border: 1px solid rgba(122, 122, 122, 0.25);
+`
+
+export const TwittterButton = styled.button`
+ ${ BasicButton }
+ background-color: #fff;
+ border: 1px solid rgba(122, 122, 122, 0.25);
+`
+
+export const ButtonSignInIcon = styled.i`
+  font-size: 18px;
+  justify-self: start;
+`
+
+export const ButtonSignInText = styled.p`
+  justify-self: center;
+  display: inline-block;
 `
