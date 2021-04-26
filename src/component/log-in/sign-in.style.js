@@ -6,7 +6,7 @@ const BasicButton = css`
   border-radius: 6px;
   width: 100%;
   margin-bottom: 2vh;
-  padding: 10px;
+  padding: 3px 3px 3px 10px;
   font-weight: bold;
   color: rgb(122, 122, 122);
   align-items: center;
@@ -27,7 +27,7 @@ export const SignInContainer = styled.div`
 
 export const SignInCard = styled.div`
   width: 70vw;
-  height: 70vh;
+  height: 75vh;
   background-color: #fff;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -66,10 +66,29 @@ export const TwittterButton = styled.button`
 
 export const ButtonSignInIcon = styled.i`
   font-size: 18px;
-  justify-self: start;
 `
 
 export const ButtonSignInText = styled.p`
-  justify-self: center;
   display: inline-block;
+  flex-grow: 1;
 `
+
+export const Separator = styled.div`
+  border-top: 1px solid #000;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+`
+
+export const SeparatorText = styled.span`
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  top: -10px;
+  font-weight: bold;
+  background-color: #fff;
+  margin-right: auto;
+  margin-left: auto;
+`
+
+

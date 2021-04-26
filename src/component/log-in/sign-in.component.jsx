@@ -19,6 +19,9 @@ export const SignIn = ({closeSignIn}) => {
           <SIS.ButtonSignInIcon className='bet-on-mefacebook2'/>
           <SIS.ButtonSignInText>Sign In with Facebook</SIS.ButtonSignInText>
         </SIS.FacebookButton>
+        <SIS.Separator>
+          <SIS.SeparatorText>or</SIS.SeparatorText>
+        </SIS.Separator>
       </SIS.SignInCard>
     </SIS.SignInContainer>
   )
