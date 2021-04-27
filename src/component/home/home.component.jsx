@@ -1,11 +1,13 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logheazaMaAction, scoateMaAction } from '../../store/user.action'
 import * as HOS from './home.style'
 
 export const Home = () => {
 
   const dispatch = useDispatch()
+
+  const isLoggedIn = useSelector(({ user }) => user.isLoggedIn)
 
   const logheazaMa = () => {
     //Pentru test vreau sa vad cum se schimba store vis a vis de isLoggedIn
@@ -17,6 +19,8 @@ export const Home = () => {
     dispatch(scoateMaAction())
   }
 
+  console.log(isLoggedIn)
+
   return(
     <HOS.HomeContainer>
       <HOS.Poster>
@@ -24,8 +28,8 @@ export const Home = () => {
           <HOS.PosterText>
           The best place to buy and sell!
           </HOS.PosterText>
-          <HOS.PosterButton onClick={logheazaMa}>Register</HOS.PosterButton>
-          <HOS.PosterButton onClick={scoateMa}>LogOUT</HOS.PosterButton>
+          {!isLoggedIn && <HOS.PosterButton onClick={logheazaMa}>Register</HOS.PosterButton>}
+          {isLoggedIn && <HOS.PosterButton onClick={scoateMa}>LogOUT</HOS.PosterButton>}
         </HOS.PosterContent>
       </HOS.Poster>
     </HOS.HomeContainer>
