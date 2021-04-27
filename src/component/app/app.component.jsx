@@ -1,11 +1,14 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+
+import store from '../../store'
 import { Menu } from '../menu'
 import { Home } from '../home'
 
 const App = () => {
 
   return(
-    <div>
+    <Provider store={store}>
       <Menu />
       <Home />
       <p>Lorem ipsum dolor sit amet.</p>
@@ -108,7 +111,7 @@ const App = () => {
       <p>Rem minus fugiat dicta nisi.</p>
       <p>Est maxime alias minus enim?</p>
       <p>Aliquid rerum voluptas odio aspernatur!</p>
-    </div>
+    </Provider>
   )
 }
 
