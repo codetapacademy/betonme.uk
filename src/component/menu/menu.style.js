@@ -17,6 +17,7 @@ export const CompanyName = styled.h1`
   font-weight: bold;
   font-size: 24px;
   margin: 0px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 `
 export const On = styled.span`
   display: inline-block;
@@ -42,6 +43,7 @@ export const SignInButton = styled.button`
   align-self: center;
   border-radius: 5px;
   border: none;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 
   &:hover {
     background-color: #000;
