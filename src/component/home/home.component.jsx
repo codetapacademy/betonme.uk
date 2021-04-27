@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../config/firebase'
 import { logheazaMaAction, scoateMaAction } from '../../store/user.action'
@@ -7,12 +7,30 @@ import * as HOS from './home.style'
 export const Home = () => {
 
   const [name, setName] = useState('')
+  const [nameList, setNameList] = useState([])
 
   const handleChange = (e) => {
     const {value} = e.target
     setName(value)
     console.log(value)
   }
+
+  useEffect(
+    () => {
+      db.collection("hahahe").onSnapshot(snap => {
+        let list = []
+
+        snap.forEach((doc) => {
+          list.push({
+            id: doc.id,
+            ...doc.data()
+          })
+        })
+        setNameList(list)
+      })
+    },
+    []
+  )
 
   const handlePress = e => {
     if (e.charCode === 13) {
@@ -51,6 +69,8 @@ export const Home = () => {
 
   console.log(isLoggedIn)
 
+  console.log(nameList)
+
   return(
     <HOS.HomeContainer>
       <HOS.Poster>
@@ -64,6 +84,19 @@ export const Home = () => {
         </HOS.PosterContent>
       </HOS.Poster>
       <input type="text" value={name} onChange={handleChange} onKeyPress={handlePress}/>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gridGap: "10px"
+      }}>
+      {nameList.map(({anaaremere, id, name}) => (
+        <>
+          <div>{id}</div>
+          <div>{name}</div>
+          <div>{anaaremere ? "da" : "nu"}</div>
+        </>
+      ))}
+      </div>
     </HOS.HomeContainer>
   )
 }

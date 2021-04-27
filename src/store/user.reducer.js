@@ -19,6 +19,13 @@ export const userReducer = (state = initialState, action)  => {
         isLoggedIn: false
       }
 
+    case constant.SETUSER:
+      return {
+        ...state,
+        isLoggedIn: !!action.userData,
+        userData: action.userData
+      }
+
     default:
       return state;
   }

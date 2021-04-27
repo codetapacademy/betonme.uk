@@ -7,3 +7,8 @@ export const logheazaMaAction = () => ({
 export const scoateMaAction = () => ({
   type: constant.LOGOUT,
 })
+
+export const setUser = (userData) => ({
+  type: constant.SETUSER,
+  userData
+})
