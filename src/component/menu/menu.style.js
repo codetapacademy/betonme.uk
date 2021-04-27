@@ -51,10 +51,6 @@ export const SignInButton = styled.button`
   }
 `
 
-export const SpaceAfterMenu = styled.div`
-  margin-top: 100px;
-`
-
 //Sidebar
 
 export const SideBarNav = styled.div`

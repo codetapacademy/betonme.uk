@@ -26,7 +26,6 @@ export const Menu = () => {
           <MS.SideBarLink>Contact</MS.SideBarLink>
         </MS.SideBarNav>}
         {signIn && <SignIn closeSignIn={closeSignIn}/>}
-      <MS.SpaceAfterMenu></MS.SpaceAfterMenu>
     </>
   )
 }

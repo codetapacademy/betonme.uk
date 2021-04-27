@@ -25,10 +25,10 @@ export const SignIn = ({closeSignIn}) => {
         <SIS.StyledInput type='email' placeholder='Email address'/>
         <SIS.StyledInput type='password' placeholder='Password'/>
         <SIS.SignInButton>Sign In</SIS.SignInButton>
-        <SIS.footerText>
+        <SIS.FooterText>
           Not a member yet?
-          <SIS.footerLink href='#'>Sign Up.</SIS.footerLink>
-        </SIS.footerText>
+          <SIS.FooterLink href='#'>Sign Up.</SIS.FooterLink>
+        </SIS.FooterText>
       </SIS.SignInCard>
     </SIS.SignInContainer>
   )

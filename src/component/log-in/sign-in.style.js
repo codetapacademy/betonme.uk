@@ -116,14 +116,14 @@ export const SignInButton = styled.button`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 `
 
-export const footerText = styled.p`
+export const FooterText = styled.p`
   font-size: 16px;
   color: rgb(0, 35, 51);
   text-align: center;
   margin-top: 50px;
 `
 
-export const footerLink = styled.a`
+export const FooterLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   padding-left: 10px;

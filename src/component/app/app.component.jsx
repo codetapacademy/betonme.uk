@@ -1,11 +1,13 @@
 import React from 'react'
 import { Menu } from '../menu'
+import { Home } from '../home'
 
 const App = () => {
 
   return(
     <div>
       <Menu />
+      <Home />
       <p>Lorem ipsum dolor sit amet.</p>
       <p>Eligendi sit velit quam quis.</p>
       <p>Sunt, hic. Voluptate, itaque aut.</p>
