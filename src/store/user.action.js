@@ -1,4 +1,5 @@
-//Aici sunt prezente actiunile care sunt folosite 
+//Aici sunt prezente actiunile care sunt folosite.
+//Acestea descriu ce vrei sa faci
 import * as constant from './user.constant'
 
 export const logheazaMaAction = () => ({
