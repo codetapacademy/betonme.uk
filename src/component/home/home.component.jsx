@@ -57,6 +57,7 @@ export const Home = () => {
     })
   }
 
+  //Dispatch the action to the store
   const logheazaMa = () => {
     //Pentru test vreau sa vad cum se schimba store vis a vis de isLoggedIn
     dispatch(logheazaMaAction())
