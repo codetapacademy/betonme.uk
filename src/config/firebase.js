@@ -19,3 +19,4 @@ export const storage = firebase.storage()
 export const ts = firebase.firestore.FieldValue.serverTimestamp();
 export const auth = firebase.auth();
 export const GitHubProvider = new firebase.auth.GithubAuthProvider()
+//This file is standard for firebase
