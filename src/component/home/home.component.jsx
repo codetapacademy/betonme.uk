@@ -14,7 +14,7 @@ export const Home = () => {
     setName(value)
     console.log(value)
   }
-
+//Snapchot for firebase with for each
   useEffect(
     () => {
       db.collection("hahahe").onSnapshot(snap => {
