@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import * as MS from './menu.style'
-import { SignIn } from '../log-in'
+import { SignIn } from '../sign-in'
 
 export const Menu = () => {
 
