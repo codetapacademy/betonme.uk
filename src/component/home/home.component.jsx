@@ -57,7 +57,7 @@ export const Home = () => {
     })
   }
 
-  //Dispatch the action to the store
+  //Dispatch the action to the store(to the reducer)
   const logheazaMa = () => {
     //Pentru test vreau sa vad cum se schimba store vis a vis de isLoggedIn
     dispatch(logheazaMaAction())

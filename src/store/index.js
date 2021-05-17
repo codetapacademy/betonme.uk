@@ -1,4 +1,5 @@
 //Aici este prezent STORE 
+//Store is basically your global state
 //Store includes your state and it sends to your component
 //The only way to change the state inside it is to dispatch an action on it 
 import * as reduxModule from 'redux';
