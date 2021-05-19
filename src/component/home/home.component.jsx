@@ -32,19 +32,19 @@ export const Home = () => {
     []
   )
 
-  const handlePress = e => {
-    if (e.charCode === 13) {
-      // Vreau sa il trimit la baza de date cand apas enter
-      db.collection("hahahe").add({
-        name,
-        anaaremere: Math.random() - 0.5 > 0
-      })
-      // Vreau sa curat formularul
-      setName("")
-      e.target.focus()
-    }
-    console.log(e, Object.keys(e))
-  }
+  // const handlePress = e => {
+  //   if (e.charCode === 13) {
+  //     // Vreau sa il trimit la baza de date cand apas enter
+  //     db.collection("hahahe").add({
+  //       name,
+  //       anaaremere: Math.random() - 0.5 > 0
+  //     })
+  //     // Vreau sa curat formularul
+  //     setName("")
+  //     e.target.focus()
+  //   }
+  //   console.log(e, Object.keys(e))
+  // }
 
   const dispatch = useDispatch()
 
