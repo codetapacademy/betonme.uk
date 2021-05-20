@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { auth, GitHubProvider } from '../../config/firebase'
 import { setUser } from '../../store/user.action'
 import * as SIS from './sign-in.style'
@@ -13,10 +13,19 @@ export const SignIn = ({closeSignIn}) => {
       const { user: { uid, displayName, photoURL, email } } = await auth.signInWithPopup(GitHubProvider)
       console.log(uid, displayName, photoURL, email)
       dispatch(setUser({uid, displayName, photoURL, email}))
+      closePopUp();
     } catch (error) {
       console.log(error,"Ceva nu merge")
     }
   }
+  const userData = useSelector(({ user }) => user.userData)
+
+  const closePopUp = () => {
+    if(userData != null) {
+        closeSignIn();
+    }
+  }
+  
 
   const handleSignOut = async () => {
     try {
