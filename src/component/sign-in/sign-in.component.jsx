@@ -20,6 +20,7 @@ export const SignIn = ({closeSignIn}) => {
   }
   const userData = useSelector(({ user }) => user.userData)
 
+  //Function to close the pop up for sign in
   const closePopUp = () => {
     if(userData != null) {
         closeSignIn();
