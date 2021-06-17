@@ -33,7 +33,7 @@ export const PosterButton = styled.button`
 `
 
 export const ActionSection = styled.div`
-  background: #fff;
+  background-color: #f3f6fd;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 `
