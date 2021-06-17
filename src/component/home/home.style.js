@@ -31,3 +31,9 @@ export const PosterButton = styled.button`
   padding: 10px 30px;
   border-radius: 6px;
 `
+
+export const ActionSection = styled.div`
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+`

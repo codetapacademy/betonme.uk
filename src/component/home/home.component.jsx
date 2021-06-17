@@ -98,6 +98,10 @@ export const Home = () => {
         </>
       ))}
       </div>
+      <HOS.ActionSection>
+        
+      </HOS.ActionSection>
+
     </HOS.HomeContainer>
   )
 }
