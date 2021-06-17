@@ -8,7 +8,7 @@ export const ActionCard = () => {
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardImage></ACS.ActionCardImage>
       <ACS.ProductName>A big white bicyle with 2 rims</ACS.ProductName>
-      
+      <ACS.PriceContainer></ACS.PriceContainer>
     </ACS.ActionCard>
   )
 }

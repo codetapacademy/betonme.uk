@@ -35,5 +35,7 @@ export const PosterButton = styled.button`
 export const ActionSection = styled.div`
   background-color: #f3f6fd;
   display: grid;
+  grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+  padding: 100px 20px;
 `

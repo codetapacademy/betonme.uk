@@ -23,3 +23,9 @@ export const ActionCardImage = styled.img`
 export const ProductName = styled.p`
   padding: 10px 10px;
 `
+
+export const PriceContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`

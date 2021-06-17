@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../config/firebase'
 import { logheazaMaAction, scoateMaAction } from '../../store/user.action'
+import { ActionCard } from '../action-card'
 import * as HOS from './home.style'
 
 export const Home = () => {
@@ -99,7 +100,10 @@ export const Home = () => {
       ))}
       </div>
       <HOS.ActionSection>
-        
+        <ActionCard />
+        <ActionCard />
+        <ActionCard />
+        <ActionCard />
       </HOS.ActionSection>
 
     </HOS.HomeContainer>
