@@ -32,6 +32,18 @@ export const PosterButton = styled.button`
   border-radius: 6px;
 `
 
+export const ActionSectionTitle = styled.div`
+    background-color: #f3f6fd;
+    font-size: 36px;
+    color: #777777;
+    padding: 50px;
+`
+
+export const ActionSectionTitleSpan = styled.span`
+  font-weight: bold;
+  color: black;
+`
+
 export const ActionSection = styled.div`
   background-color: #f3f6fd;
   display: grid;

@@ -99,6 +99,9 @@ export const Home = () => {
         </>
       ))}
       </div>
+      <HOS.ActionSectionTitle>
+        <HOS.ActionSectionTitleSpan>Current</HOS.ActionSectionTitleSpan>Actions
+      </HOS.ActionSectionTitle>
       <HOS.ActionSection>
         <ActionCard />
         <ActionCard />
