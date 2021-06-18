@@ -36,12 +36,13 @@ export const ActionSectionTitle = styled.div`
     background-color: #f3f6fd;
     font-size: 36px;
     color: #777777;
-    padding: 50px;
+    padding: 50px 0 0 10px;
 `
 
 export const ActionSectionTitleSpan = styled.span`
   font-weight: bold;
   color: black;
+  padding-right: 10px;
 `
 
 export const ActionSection = styled.div`
