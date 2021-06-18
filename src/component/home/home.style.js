@@ -52,3 +52,17 @@ export const ActionSection = styled.div`
   grid-template-columns: repeat(4, 1fr);
   padding: 100px 20px;
 `
+
+export const ViewAllButton = styled.button`
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 6px;
+`
+
+export const ContainerAllColumns = styled.div`
+  grid-column: 1/-1;
+`
