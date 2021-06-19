@@ -114,6 +114,35 @@ export const Home = () => {
       <HOS.HowItWorksTitle>
         <HOS.ActionSectionTitleSpan>How</HOS.ActionSectionTitleSpan>It works
       </HOS.HowItWorksTitle>
+      <HOS.HowItWorksSection>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+      </HOS.HowItWorksSection>
 
     </HOS.HomeContainer>
   )
