@@ -111,6 +111,9 @@ export const Home = () => {
           <HOS.ViewAllButton>View all actions</HOS.ViewAllButton>
         </HOS.ContainerAllColumns>
       </HOS.ActionSection>
+      <HOS.HowItWorksTitle>
+        <HOS.ActionSectionTitleSpan>How</HOS.ActionSectionTitleSpan>It works
+      </HOS.HowItWorksTitle>
 
     </HOS.HomeContainer>
   )
