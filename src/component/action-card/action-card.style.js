@@ -7,8 +7,8 @@ export const ActionCard = styled.div`
 `
 
 export const ActionCardHeader = styled.div`
-  background-color: #ffd613;
-  color: #f3f6fd;
+  background-color: ${({ theme }) => theme.color.dark};
+  color: ${({ theme }) => theme.color.light};
   font-weight: bold;
   padding: 20px;
   text-align: center;
@@ -28,8 +28,7 @@ export const ProductName = styled.p`
   padding: 10px 10px;
   text-align: center;
   font-size: 24px;
-  color: #ffd613;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  color: ${({ theme }) => theme.color.dark};
 `
 
 export const PriceContainer = styled.div`

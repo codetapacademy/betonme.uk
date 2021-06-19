@@ -23,8 +23,8 @@ export const On = styled.span`
   display: inline-block;
   padding: 10px;
   border-radius: 50%;
-  background-color: #ffd613;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.main};
+  color: ${({ theme }) => theme.color.light};
 `
 
 export const Hamburger = styled.i`
@@ -32,22 +32,26 @@ export const Hamburger = styled.i`
   display: flex;
   align-items: center;
   margin-right: 10px;
+  cursor: pointer;
 `
 
 export const SignInButton = styled.button`
-  background-color: #ffd613;
   padding: 10px;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.main};
+  color: ${({ theme }) => theme.color.darker};
   font-weight: bold;
   font-size: 12px;
   align-self: center;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: 250ms;
 
   &:hover {
-    background-color: #000;
-    color: #ffd613;
+    transform: scale(1.1);
+    background-color: ${({ theme }) => theme.color.darker};
+    color: ${({ theme }) => theme.color.main};
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
   }
 `
 
@@ -58,7 +62,8 @@ export const SideBarNav = styled.div`
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 10vh;
-  left: 0;
+  transition: 150ms;
+  left: ${({ showSideBar }) => showSideBar ? -570 : 0}px;
   height: 100vh;
   width: 40vw;
   background-color: #fff;
@@ -74,9 +79,10 @@ export const SideBarLink = styled.a`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  color: ${({ theme }) => theme.color.darker};
 
   &:hover {
-    background-color: #ffd613;
-    color: #fff;
+    background-color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.light};
   }
 `

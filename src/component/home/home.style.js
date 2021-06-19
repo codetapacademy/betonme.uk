@@ -54,8 +54,8 @@ export const ActionSection = styled.div`
 `
 
 export const ViewAllButton = styled.button`
-  background-color: #000;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.main};
+  color: ${({ theme }) => theme.color.secondary};
   font-weight: bold;
   font-size: 24px;
   border: none;
