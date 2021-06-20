@@ -22,6 +22,7 @@ export const ActionCard = () => {
             </ACS.Price>
           </ACS.Price>
         </ACS.PriceContainer>
+        <ACS.CardButton>Submit a bit</ACS.CardButton>
       </ACS.ActionCardBody>
     </ACS.ActionCard>
   )
