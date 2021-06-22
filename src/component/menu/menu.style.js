@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from '@reach/router'
 
 export const Menu = styled.div`
   background-color: #fff;
@@ -69,7 +70,7 @@ export const SideBarNav = styled.div`
   background-color: #fff;
 `
 
-export const SideBarLink = styled.a`
+export const SideBarLink = styled(Link)`
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;

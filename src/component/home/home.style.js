@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import BackgroundPoster from '../../asset/images/poster.jpg'
 
 export const HomeContainer = styled.div`
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
 `
 
 export const Poster = styled.div`
