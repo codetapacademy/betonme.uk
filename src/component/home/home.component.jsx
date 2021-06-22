@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../config/firebase'
 import { logheazaMaAction, scoateMaAction } from '../../store/user.action'
 import { ActionCard } from '../action-card'
+import { Footer } from '../footer'
 import * as HOS from './home.style'
 
 export const Home = () => {
@@ -111,7 +112,39 @@ export const Home = () => {
           <HOS.ViewAllButton>View all actions</HOS.ViewAllButton>
         </HOS.ContainerAllColumns>
       </HOS.ActionSection>
-
+      <HOS.HowItWorksTitle>
+        <HOS.ActionSectionTitleSpan>How</HOS.ActionSectionTitleSpan>It works
+      </HOS.HowItWorksTitle>
+      <HOS.HowItWorksSection>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+        <HOS.HowItWorksCard>
+          <HOS.HowItWorksCircle>01</HOS.HowItWorksCircle>
+          <HOS.HowCardTitle>
+            REGISTER
+          </HOS.HowCardTitle>
+          <HOS.HowCardText>
+            To start using our auction, you’ll need to register. It’s completely free!
+          </HOS.HowCardText>
+        </HOS.HowItWorksCard>
+      </HOS.HowItWorksSection>
+      <Footer />
     </HOS.HomeContainer>
   )
 }

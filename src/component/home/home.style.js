@@ -35,7 +35,7 @@ export const PosterButton = styled.button`
 export const ActionSectionTitle = styled.div`
     background-color: #f3f6fd;
     font-size: 36px;
-    color: #777777;
+    color: ${({ theme }) => theme.color.dark};
     padding: 50px 0 0 10px;
 `
 
@@ -65,4 +65,46 @@ export const ViewAllButton = styled.button`
 
 export const ContainerAllColumns = styled.div`
   grid-column: 1/-1;
+`
+
+export const HowItWorksTitle = styled.p`
+  font-size: 36px;
+  color: ${({ theme }) => theme.color.dark};
+  padding: 50px 0 0 10px;
+`
+
+export const HowItWorksSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 100px;
+  padding: 50px;
+`
+
+export const HowItWorksCard = styled.div`
+
+`
+
+export const HowItWorksCircle = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid ${({ theme }) => theme.color.dark};
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+`
+
+export const HowCardTitle = styled.p`
+  color: ${({ theme }) => theme.color.darker};
+  padding: 10px;
+  font-size: 24px;
+  border-bottom: 2px solid ${({ theme }) => theme.color.main};
+  text-align: center;
+`
+
+export const HowCardText = styled.p`
+  color: ${({ theme }) => theme.color.dark};
+  text-align: center;
 `

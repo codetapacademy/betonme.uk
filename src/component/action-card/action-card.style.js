@@ -17,6 +17,9 @@ export const ActionCardHeader = styled.div`
 
 export const ActionCardBody = styled.div`
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const ActionCardImage = styled.img`
@@ -48,4 +51,24 @@ export const PriceText = styled.p`
 
 export const PriceValue = styled.p`
   font-size: 24px;
+`
+
+export const CardButton = styled.button`
+  padding: 10px 20px;
+  width: 200px;
+  height: 60px;
+  color: ${({ theme }) => theme.color.darker};
+  background-color: ${({ theme }) => theme.color.main};
+  text-transform: uppercase;
+  font-weight: 800;
+  border-color: transparent;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.65);
+  transition: 250ms;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main};
+    background-color: ${({ theme }) => theme.color.darker};
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8);
+  }
 `

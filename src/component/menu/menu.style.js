@@ -63,7 +63,7 @@ export const SideBarNav = styled.div`
   position: fixed;
   top: 10vh;
   transition: 150ms;
-  left: ${({ showSideBar }) => showSideBar ? -570 : 0}px;
+  left: ${({ showSideBar }) => showSideBar ? -770 : 0}px;
   height: 100vh;
   width: 40vw;
   background-color: #fff;
