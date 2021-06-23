@@ -12,6 +12,7 @@ import { Menu } from '../menu'
 import { Home } from '../home'
 import { Auctions } from '../auctions'
 import { Sell } from '../sell'
+import { Footer } from '../footer'
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Auctions path="auctions" />
           <Sell path="sell" />
         </S.StyledRouter>
+        <Footer />
       </Provider>
     </ThemeProvider>
   )
