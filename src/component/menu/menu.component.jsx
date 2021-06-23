@@ -37,10 +37,9 @@ export const Menu = () => {
         )}
       </MS.Menu>
       <MS.SideBarNav showSideBar={sideBar}>
-        <MS.SideBarLink>Home</MS.SideBarLink>
-        <MS.SideBarLink>Auctions</MS.SideBarLink>
-        <MS.SideBarLink>Sell</MS.SideBarLink>
-        <MS.SideBarLink>Contact</MS.SideBarLink>
+        <MS.SideBarLink to="/">Home</MS.SideBarLink>
+        <MS.SideBarLink to="auctions">Auctions</MS.SideBarLink>
+        <MS.SideBarLink to="sell">Sell</MS.SideBarLink>
       </MS.SideBarNav>
       {signIn && <SignIn closeSignIn={closeSignIn} />}
     </>
