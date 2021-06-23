@@ -37,8 +37,6 @@ export const StyledGrid = styled.div`
 export const StyledFilter = styled.div`
   grid-column: 4/-1;
   grid-row: 1/-1;
-  position: sticky;
-  top: 10vh;
 `
 
 export const FilterTitle = styled.p`
