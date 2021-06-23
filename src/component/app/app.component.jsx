@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
-import * as S from './app.style'
+import { StyledRouter } from './app.style'
 //Provider it's actually a react component
 //It's bassicaly the glue for react and redux
 
@@ -19,11 +19,11 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Menu />
-        <S.StyledRouter>
+        <StyledRouter>
           <Home path="/" />
           <Auction path="auctions" />
           <Sell path="sell" />
-        </S.StyledRouter>
+        </StyledRouter>
       </Provider>
     </ThemeProvider>
   )
