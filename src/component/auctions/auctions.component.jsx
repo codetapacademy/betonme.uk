@@ -9,7 +9,13 @@ export const Auctions = () => {
       <SA.SectionTitle>Active Auctions</SA.SectionTitle>
       <SA.StyledDivider />
       <SA.StyledGrid>
-        <SA.StyledFilter></SA.StyledFilter>
+        <SA.StyledFilter>
+          <SA.FilterTitle>Order By</SA.FilterTitle>
+          <SA.StyledOrderBy>Current Price - high to low</SA.StyledOrderBy>
+          <SA.StyledOrderBy>Current Price - low to high</SA.StyledOrderBy>
+          <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
+          <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
+        </SA.StyledFilter>
         <ActionCard />
         <ActionCard />
         <ActionCard />

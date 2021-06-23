@@ -37,4 +37,17 @@ export const StyledGrid = styled.div`
 export const StyledFilter = styled.div`
   grid-column: 4/-1;
   grid-row: 1/-1;
+  position: sticky;
+  top: 10vh;
+`
+
+export const FilterTitle = styled.p`
+  color: ${({ theme }) => theme.color.darker};
+  font-size: 24px;
+  font-weight: 700;
+`
+
+export const StyledOrderBy = styled.p`
+  color: ${({ theme }) => theme.color.secondary};
+  padding-left: 30px;
 `
