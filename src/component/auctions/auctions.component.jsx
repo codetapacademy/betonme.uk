@@ -9,6 +9,7 @@ export const Auctions = () => {
       <SA.SectionTitle>Active Auctions</SA.SectionTitle>
       <SA.StyledDivider />
       <SA.StyledGrid>
+        <SA.StyledFilter></SA.StyledFilter>
         <ActionCard />
         <ActionCard />
         <ActionCard />

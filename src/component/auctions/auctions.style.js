@@ -33,3 +33,8 @@ export const StyledGrid = styled.div`
   padding: 30px;
   grid-gap: 20px;
 `
+
+export const StyledFilter = styled.div`
+  grid-column: 4/-1;
+  grid-row: 1/-1;
+`
