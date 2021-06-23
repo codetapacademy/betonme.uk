@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Auction = () => {
+export const Auctions = () => {
   return(
     <div>
       This is auction component(page)
