@@ -21,6 +21,11 @@ export const Auctions = () => {
         <ActionCard />
         <ActionCard />
       </SA.StyledGrid>
+      <SA.ButtonsWrapper>
+        <SA.ButtonB>1</SA.ButtonB>
+        <SA.ButtonB>2</SA.ButtonB>
+        <SA.ButtonB>3</SA.ButtonB>
+      </SA.ButtonsWrapper>
       <SA.SectionTitle>Future Auctions</SA.SectionTitle>
       <SA.StyledDivider />
       <SA.StyledGrid>
@@ -34,6 +39,13 @@ export const Auctions = () => {
         <ActionCard />
         <ActionCard />
       </SA.StyledGrid>
+      <SA.ButtonsWrapper>
+        <SA.ButtonB>1</SA.ButtonB>
+        <SA.ButtonB>2</SA.ButtonB>
+        <SA.ButtonB>3</SA.ButtonB>
+        <SA.ButtonB>4</SA.ButtonB>
+        <SA.ButtonB>5</SA.ButtonB>
+      </SA.ButtonsWrapper>
     </SA.AuctionsSection>
   )
 }

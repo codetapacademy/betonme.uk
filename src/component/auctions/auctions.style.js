@@ -49,3 +49,24 @@ export const StyledOrderBy = styled.p`
   color: ${({ theme }) => theme.color.secondary};
   padding-left: 30px;
 `
+
+export const ButtonsWrapper = styled.div`
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+`
+
+export const ButtonB = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.color.secondary};
+  color: ${({ theme }) => theme.color.main};
+  font-weight: 500;
+  font-size: 24px;
+  margin-right: 10px;
+`
