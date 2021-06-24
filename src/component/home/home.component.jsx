@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../config/firebase'
 import { logheazaMaAction, scoateMaAction } from '../../store/user.action'
 import { ActionCard } from '../action-card'
-import { Footer } from '../footer'
 import * as HOS from './home.style'
 
 export const Home = () => {
@@ -144,7 +143,6 @@ export const Home = () => {
           </HOS.HowCardText>
         </HOS.HowItWorksCard>
       </HOS.HowItWorksSection>
-      <Footer />
     </HOS.HomeContainer>
   )
 }

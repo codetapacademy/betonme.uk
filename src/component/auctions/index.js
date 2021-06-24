@@ -1,1 +1,1 @@
-export { Auction } from './auction.component'
+export { Auctions } from './auctions.component'
