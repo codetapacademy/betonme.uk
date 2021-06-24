@@ -44,6 +44,7 @@ export const StyledTextArea = styled.textarea`
   height: 200px;
   padding: 10px;
   resize: none;
+  border: none;
 `
 
 export const StyledSelect = styled.select`
@@ -56,4 +57,9 @@ export const StyledSelect = styled.select`
 
 export const StyledOption = styled.option`
   padding: 5px;
+`
+
+export const StyledSectionTitle = styled.h2`
+  font-size: 36px;
+  color: ${({ theme }) => theme.color.darker};
 `

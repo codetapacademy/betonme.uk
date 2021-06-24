@@ -7,6 +7,7 @@ export const Sell = () => {
     <S.StyledSell>
       <S.StyledTitle>Sell an object</S.StyledTitle>
       <S.StyledForm>
+        <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
         <S.StyledLabel>Auction Title</S.StyledLabel>
         <S.StyledInput type="text" placeholder="Ex.: A big white bicycle with 2 rims" />
         <S.StyledLabel>Images</S.StyledLabel>
@@ -19,6 +20,7 @@ export const Sell = () => {
           <S.StyledOption value="lei">LEI</S.StyledOption>
           <S.StyledOption value="gbp">GBP</S.StyledOption>
         </S.StyledSelect>
+        <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
       </S.StyledForm>
     </S.StyledSell>
   )
