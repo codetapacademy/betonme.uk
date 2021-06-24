@@ -55,6 +55,12 @@ export const StyledSelect = styled.select`
   margin-left: 20px;
 `
 
+export const StyledFormSeparator = styled.div`
+  height: 10px;
+  background-color: ${({ theme }) => theme.color.light};
+  margin: 20px -30px;
+`
+
 export const StyledOption = styled.option`
   padding: 5px;
 `

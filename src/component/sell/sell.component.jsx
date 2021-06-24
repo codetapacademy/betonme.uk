@@ -20,7 +20,14 @@ export const Sell = () => {
           <S.StyledOption value="lei">LEI</S.StyledOption>
           <S.StyledOption value="gbp">GBP</S.StyledOption>
         </S.StyledSelect>
+        <S.StyledFormSeparator />
         <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
+        <S.StyledLabel>Your city</S.StyledLabel>
+        <S.StyledInput type="text" />
+        <S.StyledLabel>E-mail address</S.StyledLabel>
+        <S.StyledInput type="mail" />
+        <S.StyledLabel>Phone number</S.StyledLabel>
+        <S.StyledInput type="tel" />
       </S.StyledForm>
     </S.StyledSell>
   )
