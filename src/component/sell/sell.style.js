@@ -14,6 +14,7 @@ export const StyledTitle = styled.h2`
 export const StyledForm = styled.form`
   background-color: #fff;
   padding: 30px;
+  margin-bottom: 100px;
 `
 
 export const StyledLabel = styled.label`
@@ -68,4 +69,21 @@ export const StyledOption = styled.option`
 export const StyledSectionTitle = styled.h2`
   font-size: 36px;
   color: ${({ theme }) => theme.color.darker};
+`
+
+export const StyledSubmit = styled.input`
+  padding: 20px 100px;
+  font-size: 24px;
+  border-radius: 34px;
+  border: none;
+  box-shadow: 1px 2px 2px #000;
+  color: ${({ theme }) => theme.color.secondary};
+  background-color: ${({ theme }) => theme.color.main};
+  transition: 250ms;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main};
+    background-color: ${({ theme }) => theme.color.secondary};
+    box-shadow: 2px 4px 4px #000;
+  }
 `

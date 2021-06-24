@@ -28,6 +28,8 @@ export const Sell = () => {
         <S.StyledInput type="mail" />
         <S.StyledLabel>Phone number</S.StyledLabel>
         <S.StyledInput type="tel" />
+        <S.StyledFormSeparator />
+        <S.StyledSubmit type="submit" value="Place Auction" />
       </S.StyledForm>
     </S.StyledSell>
   )
