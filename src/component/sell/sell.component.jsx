@@ -1,10 +1,12 @@
 import React from 'react'
+import * as S from './sell.style'
 
 export const Sell = () => {
 
   return(
-    <div>
-      This is sell component
-    </div>
+    <S.StyledSell>
+      <S.StyledTitle>Sell an object</S.StyledTitle>
+      
+    </S.StyledSell>
   )
 }
