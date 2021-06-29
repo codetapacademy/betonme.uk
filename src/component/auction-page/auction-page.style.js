@@ -50,6 +50,10 @@ export const WhiteContainer = styled.div`
   &:first-of-type {
     margin-bottom: 30px;
   }
+
+  &:last-of-type {
+    padding: 20px;
+  }
 `;
 
 export const RemainingTime = styled.p`
