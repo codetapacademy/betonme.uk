@@ -1,8 +1,13 @@
 import React from "react";
+import { useSelector } from 'react-redux'
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
+import userEvent from "@testing-library/user-event";
 
 export const AuctionPage = () => {
+
+  const isLoggedIn = useSelector(({ user }) => user.isLoggedIn)
+
   return (
     <S.AuctionPageBackground>
       <S.AuctionCard>
@@ -33,8 +38,8 @@ export const AuctionPage = () => {
         <S.WhiteContainer>
           <S.TextIfLoggedOut><S.StyledLink>Register</S.StyledLink> or <S.StyledLink>login</S.StyledLink> to place a bid and to participate on the auction.</S.TextIfLoggedOut>
         </S.WhiteContainer>
-        <S.RegisterButton>Register </S.RegisterButton>
-        <S.LogInButton>Log In</S.LogInButton>
+        {!isLoggedIn && <S.RegisterButton>Register </S.RegisterButton>}
+        {!isLoggedIn && <S.LogInButton>Log In</S.LogInButton>}
       </S.RightContainer>
     </S.AuctionPageBackground>
   );
