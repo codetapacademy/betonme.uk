@@ -82,3 +82,31 @@ export const StyledLink = styled.p`
   color: ${({ theme }) => theme.color.secondary};
   display: inline-block;
 `
+
+export const LogInButton = styled.button`
+  background-color: ${({ theme }) => theme.color.main};
+  color: ${({ theme }) => theme.color.secondary};
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+`
+
+export const RegisterButton = styled.button`
+  background-color: ${({ theme }) => theme.color.secondary};
+  color: ${({ theme }) => theme.color.main};
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+`
+
+

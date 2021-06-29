@@ -33,6 +33,8 @@ export const AuctionPage = () => {
         <S.WhiteContainer>
           <S.TextIfLoggedOut><S.StyledLink>Register</S.StyledLink> or <S.StyledLink>login</S.StyledLink> to place a bid and to participate on the auction.</S.TextIfLoggedOut>
         </S.WhiteContainer>
+        <S.RegisterButton>Register </S.RegisterButton>
+        <S.LogInButton>Log In</S.LogInButton>
       </S.RightContainer>
     </S.AuctionPageBackground>
   );
