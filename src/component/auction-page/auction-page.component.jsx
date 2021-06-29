@@ -40,6 +40,7 @@ export const AuctionPage = () => {
         </S.WhiteContainer>
         {!isLoggedIn && <S.RegisterButton>Register </S.RegisterButton>}
         {!isLoggedIn && <S.LogInButton>Log In</S.LogInButton>}
+        {isLoggedIn && <S.BitButton>Place Bit</S.BitButton>}
       </S.RightContainer>
     </S.AuctionPageBackground>
   );
