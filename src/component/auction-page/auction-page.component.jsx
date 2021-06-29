@@ -22,7 +22,11 @@ export const AuctionPage = () => {
           cursus eu.
         </S.DescriptionContent>
       </S.AuctionCard>
-      <S.RightContainer></S.RightContainer>
+      <S.RightContainer>
+        <S.WhiteContainer>
+          <S.RemainingTime>Remaining time: 1d 12h</S.RemainingTime>
+        </S.WhiteContainer>
+      </S.RightContainer>
     </S.AuctionPageBackground>
   );
 };
