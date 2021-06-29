@@ -7,6 +7,7 @@ export const AuctionPage = () => {
     <S.AuctionPageBackground>
       <S.AuctionCard>
         <S.AuctionTitle>This will page auction title</S.AuctionTitle>
+        <S.StartingPrice>Starting Price: $120</S.StartingPrice>
         <S.StyledImage src={image} alt="Auction image" />
         <S.DescripitonTitle>Description</S.DescripitonTitle>
         <S.DescriptionContent>
@@ -25,6 +26,12 @@ export const AuctionPage = () => {
       <S.RightContainer>
         <S.WhiteContainer>
           <S.RemainingTime>Remaining time: 1d 12h</S.RemainingTime>
+        </S.WhiteContainer>
+        <S.WhiteContainer>
+          <S.CurrentPrice>Current Price: $140</S.CurrentPrice>
+        </S.WhiteContainer>
+        <S.WhiteContainer>
+          <S.TextIfLoggedOut><S.StyledLink>Register</S.StyledLink> or <S.StyledLink>login</S.StyledLink> to place a bid and to participate on the auction.</S.TextIfLoggedOut>
         </S.WhiteContainer>
       </S.RightContainer>
     </S.AuctionPageBackground>

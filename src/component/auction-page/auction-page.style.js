@@ -5,7 +5,7 @@ export const AuctionPageBackground = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
-  padding: 30px 120px;
+  padding: 30px 300px;
 `;
 
 export const AuctionCard = styled.div`
@@ -46,6 +46,10 @@ export const WhiteContainer = styled.div`
   padding: 30px;
   background-color: #fff;
   border: 1px solid ${({ theme }) => theme.color.lighter};
+  
+  &:first-of-type {
+    margin-bottom: 30px;
+  }
 `;
 
 export const RemainingTime = styled.p`
@@ -53,3 +57,24 @@ export const RemainingTime = styled.p`
   color: ${({ theme }) => theme.color.darker};
   font-size: 1rem;
 `;
+
+export const StartingPrice = styled.p`
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.color.darker};
+`
+
+export const CurrentPrice = styled.p`
+  color: ${({ theme }) => theme.color.darker};
+  font-weight: 700;
+`
+
+export const TextIfLoggedOut = styled.p`
+  color: ${({ theme }) => theme.color.darker};
+  font-weight: 700;
+`
+
+export const StyledLink = styled.p`
+  color: ${({ theme }) => theme.color.secondary};
+  display: inline-block;
+`
