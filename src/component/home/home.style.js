@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import BackgroundPoster from '../../asset/images/poster.jpg'
+import { Link } from '@reach/router'
 
 export const HomeContainer = styled.div`
   /* margin-top: 10vh; */
@@ -53,7 +54,7 @@ export const ActionSection = styled.div`
   padding: 100px 20px;
 `
 
-export const ViewAllButton = styled.button`
+export const ViewAllButton = styled(Link)`
   background-color: ${({ theme }) => theme.color.main};
   color: ${({ theme }) => theme.color.secondary};
   font-weight: bold;
@@ -61,6 +62,7 @@ export const ViewAllButton = styled.button`
   border: none;
   padding: 10px 30px;
   border-radius: 6px;
+  text-decoration: none;
 `
 
 export const ContainerAllColumns = styled.div`

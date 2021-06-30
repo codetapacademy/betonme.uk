@@ -108,7 +108,7 @@ export const Home = () => {
         <ActionCard />
         <ActionCard />
         <HOS.ContainerAllColumns>
-          <HOS.ViewAllButton>View all actions</HOS.ViewAllButton>
+          <HOS.ViewAllButton to="/auctions">View all actions</HOS.ViewAllButton>
         </HOS.ContainerAllColumns>
       </HOS.ActionSection>
       <HOS.HowItWorksTitle>
