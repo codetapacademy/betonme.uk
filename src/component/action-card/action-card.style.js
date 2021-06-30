@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from '@reach/router'
 
 export const ActionCard = styled.div`
   background-color: #fff;
@@ -53,8 +54,7 @@ export const PriceValue = styled.p`
   font-size: 24px;
 `
 
-export const CardButton = styled.button`
-  padding: 10px 20px;
+export const CardButton = styled(Link)`
   width: 200px;
   height: 60px;
   color: ${({ theme }) => theme.color.darker};
@@ -65,6 +65,10 @@ export const CardButton = styled.button`
   border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.65);
   transition: 250ms;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     color: ${({ theme }) => theme.color.main};

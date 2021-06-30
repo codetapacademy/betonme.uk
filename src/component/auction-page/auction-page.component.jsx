@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from 'react-redux'
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
-import userEvent from "@testing-library/user-event";
 
 export const AuctionPage = () => {
 
