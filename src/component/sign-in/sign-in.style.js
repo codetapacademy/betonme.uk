@@ -102,8 +102,7 @@ export const StyledInput = styled.input`
   font-size: 15px;
   height: 40px;
   width: 100%;
-  margin-top: 20px;
-  padding: 0px 20px;
+  padding: 0px 10px;
 `
 
 export const SignInButton = styled.button`
@@ -127,4 +126,9 @@ export const FooterLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   padding-left: 10px;
+`
+
+export const StyledLabel = styled.p`
+  color: ${({ theme }) => theme.color.darker};
+  font-weight: bold;
 `

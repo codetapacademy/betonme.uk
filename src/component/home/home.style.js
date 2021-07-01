@@ -110,3 +110,4 @@ export const HowCardText = styled.p`
   color: ${({ theme }) => theme.color.dark};
   text-align: center;
 `
+
