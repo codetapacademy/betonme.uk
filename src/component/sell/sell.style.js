@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Form } from 'formik'
 
 export const StyledSell = styled.div`
   background-color: ${({ theme }) => theme.color.light};
@@ -11,7 +12,7 @@ export const StyledTitle = styled.h2`
   font-weight: 700;
 `
 
-export const StyledForm = styled.form`
+export const StyledForm = styled(Form)`
   background-color: #fff;
   padding: 30px;
   margin-bottom: 100px;
@@ -72,6 +73,23 @@ export const StyledSectionTitle = styled.h2`
 `
 
 export const StyledSubmit = styled.input`
+  padding: 20px 100px;
+  font-size: 24px;
+  border-radius: 34px;
+  border: none;
+  box-shadow: 1px 2px 2px #000;
+  color: ${({ theme }) => theme.color.secondary};
+  background-color: ${({ theme }) => theme.color.main};
+  transition: 250ms;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.main};
+    background-color: ${({ theme }) => theme.color.secondary};
+    box-shadow: 2px 4px 4px #000;
+  }
+  `
+
+export const StyledSubmitButton = styled.button`
   padding: 20px 100px;
   font-size: 24px;
   border-radius: 34px;

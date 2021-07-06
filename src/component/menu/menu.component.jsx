@@ -40,6 +40,7 @@ export const Menu = () => {
         <MS.SideBarLink to="/">Home</MS.SideBarLink>
         <MS.SideBarLink to="auctions">Auctions</MS.SideBarLink>
         <MS.SideBarLink to="sell">Sell</MS.SideBarLink>
+        <MS.SideBarLink to="auctionPage">AuctionPage (TEST)</MS.SideBarLink>
       </MS.SideBarNav>
       {signIn && <SignIn closeSignIn={closeSignIn} />}
     </>

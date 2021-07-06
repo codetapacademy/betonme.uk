@@ -65,7 +65,9 @@ export const SignIn = ({closeSignIn}) => {
         <SIS.Separator>
           <SIS.SeparatorText>or</SIS.SeparatorText>
         </SIS.Separator>
+        <SIS.StyledLabel>E-mail</SIS.StyledLabel>
         <SIS.StyledInput type='email' placeholder='Email address'/>
+        <SIS.StyledLabel>Password</SIS.StyledLabel>
         <SIS.StyledInput type='password' placeholder='Password'/>
         <SIS.SignInButton>Sign In</SIS.SignInButton>
         <SIS.FooterText>
