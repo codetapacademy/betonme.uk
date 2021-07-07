@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Form } from 'formik'
 
 export const StyledSell = styled.div`
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   padding: 30px 200px;
 `
 
@@ -26,7 +26,7 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   padding: 20px;
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   border-radius: 5px;
   border-color: transparent;
   width: 50%;
@@ -34,14 +34,14 @@ export const StyledInput = styled.input`
 
 export const StyledInputPrice = styled.input`
   padding: 20px;
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   border-radius: 5px;
   border-color: transparent;
   width: 15%;
 `
 
 export const StyledTextArea = styled.textarea`
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   width: 50%;
   height: 200px;
   padding: 10px;
@@ -51,7 +51,7 @@ export const StyledTextArea = styled.textarea`
 
 export const StyledSelect = styled.select`
   padding: 20px;
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   border-radius: 5px;
   border-color: transparent;
   margin-left: 20px;
@@ -59,7 +59,7 @@ export const StyledSelect = styled.select`
 
 export const StyledFormSeparator = styled.div`
   height: 10px;
-  background-color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.lighter};
   margin: 20px -30px;
 `
 

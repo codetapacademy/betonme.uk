@@ -10,42 +10,46 @@ export const Sell = () => {
 
   
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-      validationSchema={validationSchema}
-    >
-      {({ isValid }) => (
-        <Form>
-          <h1>salut</h1>
-          <h1>salut</h1>
-          <h1>salut</h1>
-          <Field
-            name="firstName"
-            id="firstName"
-          >
-            {({ field, meta }) => (
-              <div>
-                <input type="text" {...field} />
-                {meta.touched && meta.error && <div>error: {meta.error}</div>}
-              </div>
-            )}
-          </Field>
-          <Field
-            name="lastName"
-            id="lastName"
-          >
-            {({ field, meta }) => (
-              <div>
-                <input type="text" {...field} />
-                {meta.touched && meta.error && <div>error: {meta.error}</div>}
-              </div>
-            )}
-          </Field>
-          <button type="submit" disabled={!isValid}>Show me the ££££</button>
-        </Form>
-      )}
-    </Formik>
+    <S.StyledSell>
+
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
+        {({ isValid }) => (
+          <S.StyledForm>
+            <S.StyledTitle>Sell an object</S.StyledTitle>
+            <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
+            <h1>salut</h1>
+            <Field
+              name="firstName"
+              id="firstName"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledLabel>Auction Title</S.StyledLabel>
+                  <S.StyledInput type="text" {...field} />
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
+            <Field
+              name="lastName"
+              id="lastName"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledInput type="text" {...field} />
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
+            <button type="submit" disabled={!isValid}>Show me the ££££</button>
+          </S.StyledForm>
+        )}
+      </Formik>
+    </S.StyledSell>
   )
 }
 
