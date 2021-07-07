@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-export const initialValues = {firstName: '', lastName: ''}
+export const initialValues = {firstName: '', lastName: '', description: '', startingPrice: '', currency: ''}
 
 export const validate = values => {
   const error = {}
@@ -18,5 +18,8 @@ export const validate = values => {
 
 export const validationSchema = yup.object().shape({
   firstName: yup.string().min(6, "nu taia frunza la caini").required("we need your first name"),
-  lastName: yup.string().max(7, "suntem creativi").required("we need your last name now !!")
+  lastName: yup.string().max(7, "suntem creativi").required("we need your last name now !!"),
+  description: yup.string().max(100, "suntem creativi").required("you must put a description !!"),
+  startingPrice: yup.number().required("you must put a number!!"),
+  currency: yup.string().required("you must select a currency!!")
 })

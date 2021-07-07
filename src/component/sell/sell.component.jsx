@@ -21,7 +21,6 @@ export const Sell = () => {
           <S.StyledForm>
             <S.StyledTitle>Sell an object</S.StyledTitle>
             <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
-            <h1>salut</h1>
             <Field
               name="firstName"
               id="firstName"
@@ -29,7 +28,7 @@ export const Sell = () => {
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Auction Title</S.StyledLabel>
-                  <S.StyledInput type="text" {...field} />
+                  <S.StyledInput type="text" placeholder="Ex.: A big white bicycle with 2 rims" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </div>
               )}
@@ -40,9 +39,48 @@ export const Sell = () => {
             >
               {({ field, meta }) => (
                 <div>
+                  <S.StyledLabel>Images</S.StyledLabel>
                   <S.StyledInput type="text" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </div>
+              )}
+            </Field>
+            <Field
+              name="description"
+              id="description"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledLabel>Description</S.StyledLabel>
+                  <S.StyledTextArea {...field} placeholder="Try to write something that you wish you will find if you read this"></S.StyledTextArea>
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
+            <Field
+              name="startingPrice"
+              id="startingPrice"
+            >
+              {({ field, meta }) => (
+                <>
+                  <S.StyledLabel>Starting Price</S.StyledLabel>
+                  <S.StyledInputPrice {...field} type="text" />
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </>
+              )}
+            </Field>
+            <Field
+              name="currency"
+              id="currency"
+            >
+              {({ field, meta }) => (
+                <>
+                  <S.StyledSelect {...field}>
+                   <S.StyledOption value="lei">LEI</S.StyledOption>
+                   <S.StyledOption value="gbp">GBP</S.StyledOption>
+                  </S.StyledSelect>
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </>
               )}
             </Field>
             <button type="submit" disabled={!isValid}>Show me the ££££</button>
@@ -95,10 +133,10 @@ export const Sell = () => {
 //             <S.StyledLabel>Starting Price</S.StyledLabel>
 //             <S.StyledInputPrice type="text" />
 
-//             <S.StyledSelect>
-//               <S.StyledOption value="lei">LEI</S.StyledOption>
-//               <S.StyledOption value="gbp">GBP</S.StyledOption>
-//             </S.StyledSelect>
+            // <S.StyledSelect>
+            //   <S.StyledOption value="lei">LEI</S.StyledOption>
+            //   <S.StyledOption value="gbp">GBP</S.StyledOption>
+            // </S.StyledSelect>
 
 //             <S.StyledFormSeparator />
 //             <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
