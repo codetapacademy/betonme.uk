@@ -83,6 +83,21 @@ export const Sell = () => {
                 </>
               )}
             </Field>
+            <S.StyledFormSeparator />
+            <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
+            <Field
+              name="city"
+              id="city"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledLabel>Your city</S.StyledLabel>
+                  <S.StyledInput type="text" {...field} />
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
+            <S.StyledFormSeparator />
             <button type="submit" disabled={!isValid}>Show me the ££££</button>
           </S.StyledForm>
         )}
@@ -139,8 +154,8 @@ export const Sell = () => {
             // </S.StyledSelect>
 
 //             <S.StyledFormSeparator />
-//             <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
-//             <S.StyledLabel>Your city</S.StyledLabel>
+            // <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
+            // <S.StyledLabel>Your city</S.StyledLabel>
 //             <S.StyledInput type="text" />
 //             <S.StyledLabel>E-mail address</S.StyledLabel>
 //             <S.StyledInput type="mail" />
