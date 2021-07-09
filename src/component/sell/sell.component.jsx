@@ -97,6 +97,30 @@ export const Sell = () => {
                 </div>
               )}
             </Field>
+            <Field
+              name="email"
+              id="email"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledLabel>E-mail address</S.StyledLabel>
+                  <S.StyledInput type="mail" {...field} />
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
+            <Field
+              name="phone"
+              id="phone"
+            >
+              {({ field, meta }) => (
+                <div>
+                  <S.StyledLabel>Phone number</S.StyledLabel>
+                  <S.StyledInput type="tel" {...field}/>
+                  {meta.touched && meta.error && <div>error: {meta.error}</div>}
+                </div>
+              )}
+            </Field>
             <S.StyledFormSeparator />
             <button type="submit" disabled={!isValid}>Show me the ££££</button>
           </S.StyledForm>
