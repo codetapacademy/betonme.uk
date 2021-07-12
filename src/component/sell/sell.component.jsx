@@ -5,8 +5,9 @@ import { initialValues, validationSchema } from "./sell.form";
 import { db } from "../../config/firebase";
 
 export const Sell = () => {
-  const onSubmit = values => {
+  const onSubmit = (values, {resetForm}) => {
     db.collection("auctions").add(values)
+    resetForm({ values: ''})
   }
 
   
