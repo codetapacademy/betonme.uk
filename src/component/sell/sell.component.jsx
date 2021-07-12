@@ -1,11 +1,12 @@
 import React from "react";
 import * as S from "./sell.style";
-import { Formik, Form, Field } from "formik";
+import { Formik, Field } from "formik";
 import { initialValues, validationSchema } from "./sell.form";
+import { db } from "../../config/firebase";
 
 export const Sell = () => {
   const onSubmit = values => {
-    console.log(values)
+    db.collection("auctions").add(values)
   }
 
   
@@ -22,8 +23,8 @@ export const Sell = () => {
             <S.StyledTitle>Sell an object</S.StyledTitle>
             <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
             <Field
-              name="firstName"
-              id="firstName"
+              name="title"
+              id="title"
             >
               {({ field, meta }) => (
                 <div>
@@ -34,8 +35,8 @@ export const Sell = () => {
               )}
             </Field>
             <Field
-              name="lastName"
-              id="lastName"
+              name="images"
+              id="images"
             >
               {({ field, meta }) => (
                 <div>
@@ -121,6 +122,7 @@ export const Sell = () => {
                 </div>
               )}
             </Field>
+            {isValid && <div>is valid e true</div>}
             <S.StyledFormSeparator />
             <button type="submit" disabled={!isValid}>Show me the ££££</button>
           </S.StyledForm>
