@@ -2,18 +2,18 @@ import React from 'react'
 import * as ACS from './action-card.style'
 import Image from '../../asset/images/bicycle.jpg'
 
-export const ActionCard = () => {
+export const ActionCard = ({title, descripiton, startingPrice, currency, city, email, phone}) => {
 
   return(
     <ACS.ActionCard>
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardBody>
         <ACS.ActionCardImage src={Image} />
-        <ACS.ProductName>A big white bicycle with 2 rims</ACS.ProductName>
+        <ACS.ProductName>{title}</ACS.ProductName>
         <ACS.PriceContainer>
           <ACS.Price>
             <ACS.PriceText>Start Price</ACS.PriceText>
-            <ACS.PriceValue>$ 120.00</ACS.PriceValue>
+            <ACS.PriceValue>$ {startingPrice}</ACS.PriceValue>
           </ACS.Price>
           <ACS.Price>
             <ACS.Price>
