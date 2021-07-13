@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
+import { db } from '../../config/firebase'
 import * as SA from './auctions.style'
 import { ActionCard } from '../action-card'
 
 export const Auctions = () => {
+
+  const [auctionsList, setAuctionsList] = useState([])
+  
+  useEffect(
+    () => {
+      db.collection('auctions').onSnapshot(snap => {
+        let list = []
+
+        snap.forEach((doc) => {
+          list.push({
+            id: doc.id,
+            ...doc.data()
+          })
+          setAuctionsList(list)
+        })
+      })
+    },
+    [])
+
   return(
     <SA.AuctionsSection>
       <SA.FirstImage />
@@ -16,10 +36,9 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
+        {auctionsList.map((ele) => {
+          <ActionCard />
+        })}
       </SA.StyledGrid>
       <SA.ButtonsWrapper>
         <SA.ButtonB>1</SA.ButtonB>
