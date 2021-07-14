@@ -17,8 +17,8 @@ export const Auctions = () => {
             id: doc.id,
             ...doc.data()
           })
-          setAuctionsList(list)
         })
+        setAuctionsList(list)
       })
     },
     [])
@@ -36,8 +36,8 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
-        {auctionsList.map(({title, startingPrice}) => {
-          <ActionCard title={title} startingPrice={startingPrice}/>
+        {auctionsList.map(({title, startingPrice, id}) => {
+          return <ActionCard key={id} title={title} startingPrice={startingPrice}/>
         })}
       </SA.StyledGrid>
       <SA.ButtonsWrapper>

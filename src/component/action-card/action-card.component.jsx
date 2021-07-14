@@ -2,7 +2,7 @@ import React from 'react'
 import * as ACS from './action-card.style'
 import Image from '../../asset/images/bicycle.jpg'
 
-export const ActionCard = ({title, descripiton, startingPrice, currency, city, email, phone}) => {
+export const ActionCard = ({title, startingPrice}) => {
 
   return(
     <ACS.ActionCard>
