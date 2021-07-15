@@ -3,29 +3,18 @@ import { useSelector } from 'react-redux'
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
 
-export const AuctionPage = () => {
+export const AuctionPage = ({title, price, description}) => {
 
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn)
 
   return (
     <S.AuctionPageBackground>
       <S.AuctionCard>
-        <S.AuctionTitle>This will page auction title</S.AuctionTitle>
-        <S.StartingPrice>Starting Price: $120</S.StartingPrice>
+        <S.AuctionTitle>{title}</S.AuctionTitle>
+        <S.StartingPrice>Starting Price: ${price}</S.StartingPrice>
         <S.StyledImage src={image} alt="Auction image" />
         <S.DescripitonTitle>Description</S.DescripitonTitle>
-        <S.DescriptionContent>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel urna
-          lacinia lorem pharetra accumsan quis faucibus sapien. Pellentesque
-          mollis molestie ante, quis molestie est. Fusce iaculis nisi odio.
-          Nulla tincidunt sem vitae tortor aliquet ornare. Etiam vel sapien
-          ultricies, blandit sapien eu, facilisis diam. In volutpat lectus sed
-          felis porttitor bibendum. In tempor suscipit quam non porttitor. Sed
-          quis eros bibendum, egestas tortor nec, posuere sapien. Morbi semper
-          tincidunt mauris, sed dapibus libero. Nam sed turpis at ante efficitur
-          facilisis. Quisque vel mauris nibh. Sed malesuada leo ex, a congue sem
-          cursus eu.
-        </S.DescriptionContent>
+        <S.DescriptionContent>{description}</S.DescriptionContent>
       </S.AuctionCard>
       <S.RightContainer>
         <S.WhiteContainer>
