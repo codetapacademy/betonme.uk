@@ -1,17 +1,20 @@
 import React from "react";
 import { useSelector } from 'react-redux'
+import { useLocation } from '@reach/router'
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
 
-export const AuctionPage = ({title, price, description}) => {
+export const AuctionPage = ({price, description}) => {
 
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn)
+  const location = useLocation()
+  const {title, StartingPrice} = location.state
 
   return (
     <S.AuctionPageBackground>
       <S.AuctionCard>
         <S.AuctionTitle>{title}</S.AuctionTitle>
-        <S.StartingPrice>Starting Price: ${price}</S.StartingPrice>
+        <S.StartingPrice>Starting Price: ${StartingPrice}</S.StartingPrice>
         <S.StyledImage src={image} alt="Auction image" />
         <S.DescripitonTitle>Description</S.DescripitonTitle>
         <S.DescriptionContent>{description}</S.DescriptionContent>

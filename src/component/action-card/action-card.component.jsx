@@ -22,7 +22,13 @@ export const ActionCard = ({title, startingPrice}) => {
             </ACS.Price>
           </ACS.Price>
         </ACS.PriceContainer>
-        <ACS.CardButton to="/auctionPage" >Submit a bit</ACS.CardButton>
+        <ACS.CardButton to={{
+          pathname: "/auctionPage",
+          state: {
+            title: {title},
+            startingPrice: {startingPrice}
+          }
+        }} >Submit a bit</ACS.CardButton>
       </ACS.ActionCardBody>
     </ACS.ActionCard>
   )
