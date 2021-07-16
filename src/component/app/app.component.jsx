@@ -25,7 +25,7 @@ const App = () => {
           <Home path="/" />
           <Auctions path="auctions" />
           <Sell path="sell" />
-          <AuctionPage path="auctionPage" />
+          <AuctionPage path="/auction/:id" />
         </S.StyledRouter>
         <Footer />
       </Provider>

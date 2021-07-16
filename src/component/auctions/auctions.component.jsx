@@ -1,29 +1,27 @@
-import React, { useState, useEffect} from 'react'
-import { db } from '../../config/firebase'
-import * as SA from './auctions.style'
-import { ActionCard } from '../action-card'
+import React, { useState, useEffect } from "react";
+import { db } from "../../config/firebase";
+import * as SA from "./auctions.style";
+import { ActionCard } from "../action-card";
 
 export const Auctions = () => {
+  const [auctionsList, setAuctionsList] = useState([]);
 
-  const [auctionsList, setAuctionsList] = useState([])
-  
-  useEffect(
-    () => {
-      db.collection('auctions').onSnapshot(snap => {
-        let list = []
+  useEffect(() => {
+    db.collection("auctions").onSnapshot((snap) => {
+      let list = [];
 
-        snap.forEach((doc) => {
-          list.push({
-            id: doc.id,
-            ...doc.data()
-          })
-        })
-        setAuctionsList(list)
-      })
-    },
-    [])
+      snap.forEach((doc) => {
+        list.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setAuctionsList(list);
+    });
+  }, []);
 
-  return(
+  console.log(auctionsList);
+  return (
     <SA.AuctionsSection>
       <SA.FirstImage />
       <SA.SectionTitle>Active Auctions</SA.SectionTitle>
@@ -36,8 +34,8 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
-        {auctionsList.map(({title, startingPrice, id}) => {
-          return <ActionCard key={id} title={title} startingPrice={startingPrice}/>
+        {auctionsList.map(({ title, startingPrice, id }) => {
+          return <ActionCard key={id} id={id} />;
         })}
       </SA.StyledGrid>
       <SA.ButtonsWrapper>
@@ -66,5 +64,5 @@ export const Auctions = () => {
         <SA.ButtonB>5</SA.ButtonB>
       </SA.ButtonsWrapper>
     </SA.AuctionsSection>
-  )
-}
+  );
+};

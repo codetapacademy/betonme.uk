@@ -2,18 +2,20 @@ import React from 'react'
 import * as ACS from './action-card.style'
 import Image from '../../asset/images/bicycle.jpg'
 
-export const ActionCard = ({title, startingPrice}) => {
+export const ActionCard = ({id}) => {
 
+
+  console.log(id)
   return(
     <ACS.ActionCard>
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardBody>
         <ACS.ActionCardImage src={Image} />
-        <ACS.ProductName>{title}</ACS.ProductName>
+        {/* <ACS.ProductName>{title}</ACS.ProductName> */}
         <ACS.PriceContainer>
           <ACS.Price>
             <ACS.PriceText>Start Price</ACS.PriceText>
-            <ACS.PriceValue>$ {startingPrice}</ACS.PriceValue>
+            {/* <ACS.PriceValue>$ {startingPrice}</ACS.PriceValue> */}
           </ACS.Price>
           <ACS.Price>
             <ACS.Price>
@@ -22,7 +24,7 @@ export const ActionCard = ({title, startingPrice}) => {
             </ACS.Price>
           </ACS.Price>
         </ACS.PriceContainer>
-        <ACS.CardButton to="/auctionPage" >Submit a bit</ACS.CardButton>
+        <ACS.CardButton to={`/auction/${id}`} >Submit a bit</ACS.CardButton>
       </ACS.ActionCardBody>
     </ACS.ActionCard>
   )
