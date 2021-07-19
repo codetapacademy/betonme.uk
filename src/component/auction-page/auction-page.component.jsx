@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, useParams } from "@reach/router";
+import { useParams } from "@reach/router";
 import { db } from "../../config/firebase";
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
 
 export const AuctionPage = ({ price, description }) => {
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
-  const location = useLocation();
   const { id } = useParams();
-  const { title, StartingPrice } = location.state;
-  console.log(location, id);
 
   const [auction, setAuction] = useState({});
 
@@ -20,8 +17,6 @@ export const AuctionPage = ({ price, description }) => {
       .get()
       .then((snapshot) => setAuction(snapshot.data()));
   }, []);
-
-  console.log(auction);
 
   return (
     <S.AuctionPageBackground>

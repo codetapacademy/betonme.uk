@@ -34,8 +34,8 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
-        {auctionsList.map(({ title, startingPrice, id }) => {
-          return <ActionCard key={id} id={id} />;
+        {auctionsList.map(({ id }) => {
+          <ActionCard key={id} id={id} />;
         })}
       </SA.StyledGrid>
       <SA.ButtonsWrapper>

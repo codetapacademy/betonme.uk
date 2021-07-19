@@ -4,8 +4,6 @@ import Image from '../../asset/images/bicycle.jpg'
 
 export const ActionCard = ({id}) => {
 
-
-  console.log(id)
   return(
     <ACS.ActionCard>
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>

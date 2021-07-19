@@ -69,10 +69,6 @@ export const Home = () => {
     dispatch(scoateMaAction())
   }
 
-  console.log(isLoggedIn)
-
-  console.log(nameList)
-
   return(
     <HOS.HomeContainer>
       <HOS.Poster>
