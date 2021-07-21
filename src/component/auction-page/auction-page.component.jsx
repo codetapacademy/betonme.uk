@@ -5,7 +5,7 @@ import { db } from "../../config/firebase";
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
 
-export const AuctionPage = ({ price, description }) => {
+export const AuctionPage = () => {
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
   const { id } = useParams();
 

@@ -1,19 +1,29 @@
-import React from 'react'
-import * as ACS from './action-card.style'
-import Image from '../../asset/images/bicycle.jpg'
+import React, { useEffect, useState } from "react";
+import * as ACS from "./action-card.style";
+import Image from "../../asset/images/bicycle.jpg";
+import { db } from "../../config/firebase";
 
-export const ActionCard = ({id}) => {
+export const ActionCard = ({ id }) => {
 
-  return(
+  const [CardData, setCardData] = useState({});
+
+  useEffect(() => {
+    db.collection('auctions')
+      .doc(id)
+      .get()
+      .then((snapshot) => setCardData(snapshot.data()));
+  }, []);
+
+  return (
     <ACS.ActionCard>
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardBody>
         <ACS.ActionCardImage src={Image} />
-        {/* <ACS.ProductName>{title}</ACS.ProductName> */}
+        <ACS.ProductName>{CardData?.title}</ACS.ProductName>
         <ACS.PriceContainer>
           <ACS.Price>
             <ACS.PriceText>Start Price</ACS.PriceText>
-            {/* <ACS.PriceValue>$ {startingPrice}</ACS.PriceValue> */}
+            <ACS.PriceValue>$ {CardData?.startingPrice}</ACS.PriceValue>
           </ACS.Price>
           <ACS.Price>
             <ACS.Price>
@@ -22,8 +32,8 @@ export const ActionCard = ({id}) => {
             </ACS.Price>
           </ACS.Price>
         </ACS.PriceContainer>
-        <ACS.CardButton to={`/auction/${id}`} >Submit a bit</ACS.CardButton>
+        <ACS.CardButton to={`/auction/${id}`}>Submit a bit</ACS.CardButton>
       </ACS.ActionCardBody>
     </ACS.ActionCard>
-  )
-}
+  );
+};
