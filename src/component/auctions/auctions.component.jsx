@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../config/firebase";
 import * as SA from "./auctions.style";
-import { ActionCard } from "../action-card";
+import { AuctionCard } from "../auction-card";
 
 export const Auctions = () => {
   const [auctionsList, setAuctionsList] = useState([]);
@@ -35,7 +35,7 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
         {auctionsList.map(({ id }) => {
-          return <ActionCard key={id} id={id} />;
+          return <AuctionCard key={id} id={id} />;
         })}
       </SA.StyledGrid>
       <SA.ButtonsWrapper>
@@ -51,10 +51,10 @@ export const Auctions = () => {
           <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
         </SA.StyledFilter>
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
+        <AuctionCard />
+        <AuctionCard />
+        <AuctionCard />
+        <AuctionCard />
       </SA.StyledGrid>
       <SA.ButtonsWrapper>
         <SA.ButtonB>1</SA.ButtonB>

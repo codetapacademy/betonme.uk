@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { db } from "../../config/firebase";
 import { logheazaMaAction, scoateMaAction } from "../../store/user.action";
-import { ActionCard } from "../action-card";
+import { AuctionCard } from "../auction-card";
 import * as HOS from "./home.style";
 
 export const Home = () => {
@@ -103,13 +103,13 @@ export const Home = () => {
         ))}
       </div>
       <HOS.ActionSectionTitle>
-        <HOS.ActionSectionTitleSpan>Current</HOS.ActionSectionTitleSpan>Actions
+        <HOS.ActionSectionTitleSpan>Current</HOS.ActionSectionTitleSpan>Auctions
       </HOS.ActionSectionTitle>
       <HOS.ActionSection>
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
-        <ActionCard />
+        <AuctionCard />
+        <AuctionCard />
+        <AuctionCard />
+        <AuctionCard />
         <HOS.ContainerAllColumns>
           <HOS.ViewAllButton to="/auctions">View all actions</HOS.ViewAllButton>
         </HOS.ContainerAllColumns>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import * as ACS from "./action-card.style";
+import * as ACS from "./auction-card.style";
 import Image from "../../asset/images/bicycle.jpg";
 import { db } from "../../config/firebase";
 
-export const ActionCard = ({ id }) => {
+export const AuctionCard = ({ id }) => {
   const [CardData, setCardData] = useState({});
 
   useEffect(() => {
