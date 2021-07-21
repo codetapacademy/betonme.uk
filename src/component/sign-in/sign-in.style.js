@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 const BasicButton = css`
   border: none;
@@ -10,7 +10,7 @@ const BasicButton = css`
   font-weight: bold;
   color: rgb(122, 122, 122);
   align-items: center;
-`
+`;
 
 export const SignInContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.25);
@@ -23,7 +23,7 @@ export const SignInContainer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-`
+`;
 
 export const SignInCard = styled.div`
   width: 70vw;
@@ -33,7 +33,7 @@ export const SignInCard = styled.div`
   border-radius: 10px;
   position: relative;
   padding: 50px 20px 20px 20px;
-`
+`;
 
 export const Cross = styled.i`
   position: absolute;
@@ -45,44 +45,44 @@ export const Cross = styled.i`
   border-radius: 6px;
   padding: 8px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-`
+`;
 
 export const FacebookButton = styled.button`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  ${ BasicButton }
+  ${BasicButton}
   background-color: #4267B2;
   color: #fff;
-`
+`;
 
 export const GoogleButton = styled.button`
-  ${ BasicButton }
+  ${BasicButton}
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   border: 1px solid rgba(122, 122, 122, 0.25);
-`
+`;
 
 export const TwittterButton = styled.button`
-  ${ BasicButton }
+  ${BasicButton}
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   border: 1px solid rgba(122, 122, 122, 0.25);
-`
+`;
 
 export const ButtonSignInIcon = styled.i`
   font-size: 18px;
-`
+`;
 
 export const ButtonSignInText = styled.p`
   display: inline-block;
   flex-grow: 1;
-`
+`;
 
 export const Separator = styled.div`
   border-top: 1px solid #000;
   text-align: center;
   position: relative;
   margin-top: 20px;
-`
+`;
 
 export const SeparatorText = styled.span`
   position: absolute;
@@ -93,7 +93,7 @@ export const SeparatorText = styled.span`
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
-`
+`;
 
 export const StyledInput = styled.input`
   border-radius: 6px;
@@ -103,32 +103,32 @@ export const StyledInput = styled.input`
   height: 40px;
   width: 100%;
   padding: 0px 10px;
-`
+`;
 
 export const SignInButton = styled.button`
-  ${ BasicButton }
+  ${BasicButton}
   justify-content: center;
   color: #fff;
   background-color: #ffd613;
   font-size: 36px;
   margin-top: 30px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-`
+`;
 
 export const FooterText = styled.p`
   font-size: 16px;
   color: rgb(0, 35, 51);
   text-align: center;
   margin-top: 50px;
-`
+`;
 
 export const FooterLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   padding-left: 10px;
-`
+`;
 
 export const StyledLabel = styled.p`
   color: ${({ theme }) => theme.color.darker};
   font-weight: bold;
-`
+`;

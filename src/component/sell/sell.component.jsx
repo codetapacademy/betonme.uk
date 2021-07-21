@@ -5,15 +5,13 @@ import { initialValues, validationSchema } from "./sell.form";
 import { db } from "../../config/firebase";
 
 export const Sell = () => {
-  const onSubmit = (values, {resetForm}) => {
-    db.collection("auctions").add(values)
-    resetForm({ values: ''})
-  }
+  const onSubmit = (values, { resetForm }) => {
+    db.collection("auctions").add(values);
+    resetForm({ values: "" });
+  };
 
-  
   return (
     <S.StyledSell>
-
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -23,22 +21,20 @@ export const Sell = () => {
           <S.StyledForm>
             <S.StyledTitle>Sell an object</S.StyledTitle>
             <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
-            <Field
-              name="title"
-              id="title"
-            >
+            <Field name="title" id="title">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Auction Title</S.StyledLabel>
-                  <S.StyledInput type="text" placeholder="Ex.: A big white bicycle with 2 rims" {...field} />
+                  <S.StyledInput
+                    type="text"
+                    placeholder="Ex.: A big white bicycle with 2 rims"
+                    {...field}
+                  />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </div>
               )}
             </Field>
-            <Field
-              name="images"
-              id="images"
-            >
+            <Field name="images" id="images">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Images</S.StyledLabel>
@@ -47,22 +43,19 @@ export const Sell = () => {
                 </div>
               )}
             </Field>
-            <Field
-              name="description"
-              id="description"
-            >
+            <Field name="description" id="description">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Description</S.StyledLabel>
-                  <S.StyledTextArea {...field} placeholder="Try to write something that you wish you will find if you read this"></S.StyledTextArea>
+                  <S.StyledTextArea
+                    {...field}
+                    placeholder="Try to write something that you wish you will find if you read this"
+                  ></S.StyledTextArea>
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </div>
               )}
             </Field>
-            <Field
-              name="startingPrice"
-              id="startingPrice"
-            >
+            <Field name="startingPrice" id="startingPrice">
               {({ field, meta }) => (
                 <>
                   <S.StyledLabel>Starting Price</S.StyledLabel>
@@ -71,15 +64,12 @@ export const Sell = () => {
                 </>
               )}
             </Field>
-            <Field
-              name="currency"
-              id="currency"
-            >
+            <Field name="currency" id="currency">
               {({ field, meta }) => (
                 <>
                   <S.StyledSelect {...field}>
-                   <S.StyledOption value="lei">LEI</S.StyledOption>
-                   <S.StyledOption value="gbp">GBP</S.StyledOption>
+                    <S.StyledOption value="lei">LEI</S.StyledOption>
+                    <S.StyledOption value="gbp">GBP</S.StyledOption>
                   </S.StyledSelect>
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </>
@@ -87,10 +77,7 @@ export const Sell = () => {
             </Field>
             <S.StyledFormSeparator />
             <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
-            <Field
-              name="city"
-              id="city"
-            >
+            <Field name="city" id="city">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Your city</S.StyledLabel>
@@ -99,10 +86,7 @@ export const Sell = () => {
                 </div>
               )}
             </Field>
-            <Field
-              name="email"
-              id="email"
-            >
+            <Field name="email" id="email">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>E-mail address</S.StyledLabel>
@@ -111,25 +95,23 @@ export const Sell = () => {
                 </div>
               )}
             </Field>
-            <Field
-              name="phone"
-              id="phone"
-            >
+            <Field name="phone" id="phone">
               {({ field, meta }) => (
                 <div>
                   <S.StyledLabel>Phone number</S.StyledLabel>
-                  <S.StyledInput type="tel" {...field}/>
+                  <S.StyledInput type="tel" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </div>
               )}
             </Field>
             {isValid && <div>is valid e true</div>}
             <S.StyledFormSeparator />
-            <button type="submit" disabled={!isValid}>Show me the ££££</button>
+            <button type="submit" disabled={!isValid}>
+              Show me the ££££
+            </button>
           </S.StyledForm>
         )}
       </Formik>
     </S.StyledSell>
-  )
-}
-
+  );
+};

@@ -4,11 +4,10 @@ import Image from "../../asset/images/bicycle.jpg";
 import { db } from "../../config/firebase";
 
 export const ActionCard = ({ id }) => {
-
   const [CardData, setCardData] = useState({});
 
   useEffect(() => {
-    db.collection('auctions')
+    db.collection("auctions")
       .doc(id)
       .get()
       .then((snapshot) => setCardData(snapshot.data()));

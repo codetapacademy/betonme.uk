@@ -46,7 +46,7 @@ export const WhiteContainer = styled.div`
   padding: 30px;
   background-color: #fff;
   border: 1px solid ${({ theme }) => theme.color.lighter};
-  
+
   &:first-of-type {
     margin-bottom: 30px;
   }
@@ -66,22 +66,22 @@ export const StartingPrice = styled.p`
   font-size: 1.5rem;
   font-weight: 500;
   color: ${({ theme }) => theme.color.darker};
-`
+`;
 
 export const CurrentPrice = styled.p`
   color: ${({ theme }) => theme.color.darker};
   font-weight: 700;
-`
+`;
 
 export const TextIfLoggedOut = styled.p`
   color: ${({ theme }) => theme.color.darker};
   font-weight: 700;
-`
+`;
 
 export const StyledLink = styled.p`
   color: ${({ theme }) => theme.color.secondary};
   display: inline-block;
-`
+`;
 
 export const LogInButton = styled.button`
   background-color: ${({ theme }) => theme.color.main};
@@ -94,7 +94,7 @@ export const LogInButton = styled.button`
   border: none;
   font-weight: bold;
   font-size: 1.5rem;
-`
+`;
 
 export const RegisterButton = styled.button`
   background-color: ${({ theme }) => theme.color.secondary};
@@ -107,7 +107,7 @@ export const RegisterButton = styled.button`
   border: none;
   font-weight: bold;
   font-size: 1.5rem;
-`
+`;
 
 export const BitButton = styled.button`
   background-color: ${({ theme }) => theme.color.secondary};
@@ -120,4 +120,4 @@ export const BitButton = styled.button`
   border: none;
   font-weight: bold;
   font-size: 1.5rem;
-`
+`;

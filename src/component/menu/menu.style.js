@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from '@reach/router'
+import styled from "styled-components";
+import { Link } from "@reach/router";
 
 export const Menu = styled.div`
   background-color: #fff;
@@ -13,20 +13,20 @@ export const Menu = styled.div`
   right: 0;
   width: 100%;
   height: 10vh;
-`
+`;
 export const CompanyName = styled.h1`
   font-weight: bold;
   font-size: 24px;
   margin: 0px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-`
+`;
 export const On = styled.span`
   display: inline-block;
   padding: 10px;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.color.main};
   color: ${({ theme }) => theme.color.light};
-`
+`;
 
 export const Hamburger = styled.i`
   font-size: 24px;
@@ -34,7 +34,7 @@ export const Hamburger = styled.i`
   align-items: center;
   margin-right: 10px;
   cursor: pointer;
-`
+`;
 
 export const SignInButton = styled.button`
   padding: 10px;
@@ -54,7 +54,7 @@ export const SignInButton = styled.button`
     color: ${({ theme }) => theme.color.main};
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
   }
-`
+`;
 
 //Sidebar
 
@@ -64,11 +64,11 @@ export const SideBarNav = styled.div`
   position: fixed;
   top: 10vh;
   transition: 150ms;
-  left: ${({ showSideBar }) => showSideBar ? -770 : 0}px;
+  left: ${({ showSideBar }) => (showSideBar ? -770 : 0)}px;
   height: 100vh;
   width: 40vw;
   background-color: #fff;
-`
+`;
 
 export const SideBarLink = styled(Link)`
   text-decoration: none;
@@ -86,4 +86,4 @@ export const SideBarLink = styled(Link)`
     background-color: ${({ theme }) => theme.color.main};
     color: ${({ theme }) => theme.color.light};
   }
-`
+`;
