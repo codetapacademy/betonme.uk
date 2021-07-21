@@ -7,7 +7,7 @@ import { db } from "../../config/firebase";
 export const Sell = () => {
   const onSubmit = (values, { resetForm }) => {
     db.collection("auctions").add(values);
-    resetForm({ values: "" });
+    resetForm();
   };
 
   return (
@@ -16,6 +16,7 @@ export const Sell = () => {
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
+        enebleReinitialize
       >
         {({ isValid }) => (
           <S.StyledForm>
