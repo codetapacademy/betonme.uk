@@ -20,7 +20,6 @@ export const Auctions = () => {
     });
   }, []);
 
-  console.log(auctionsList);
   return (
     <SA.AuctionsSection>
       <SA.FirstImage />

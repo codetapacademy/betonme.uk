@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as ACS from "./auction-card.style";
-import Image from "../../asset/images/bicycle.jpg";
+import image from "../../asset/images/bicycle.jpg";
 import { db } from "../../config/firebase";
 
 export const AuctionCard = ({ id }) => {
@@ -17,7 +17,7 @@ export const AuctionCard = ({ id }) => {
     <ACS.ActionCard>
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardBody>
-        <ACS.ActionCardImage src={Image} />
+        <ACS.ActionCardImage src={image} />
         <ACS.ProductName>{cardData?.title}</ACS.ProductName>
         <ACS.PriceContainer>
           <ACS.Price>

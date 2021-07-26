@@ -6,13 +6,25 @@ import { AuctionCard } from "../auction-card";
 import * as HOS from "./home.style";
 
 export const Home = () => {
-  
+  const [auctionsList, setAuctionsList] = useState([]);
+
+  useEffect(() => {
+    db.collection("auctions").onSnapshot((snap) => {
+      let list = [];
+
+      snap.forEach((doc) => {
+        list.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setAuctionsList(list);
+    });
+  }, []);
 
   const dispatch = useDispatch();
 
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
-
-  
 
   //Dispatch the action to the store(to the reducer)
   const logheazaMa = () => {
@@ -42,10 +54,9 @@ export const Home = () => {
         <HOS.ActionSectionTitleSpan>Current</HOS.ActionSectionTitleSpan>Auctions
       </HOS.ActionSectionTitle>
       <HOS.ActionSection>
-        <AuctionCard />
-        <AuctionCard />
-        <AuctionCard />
-        <AuctionCard />
+        {auctionsList.map(({ id }) => {
+          return <AuctionCard key={id} id={id} />;
+        })}
         <HOS.ContainerAllColumns>
           <HOS.ViewAllButton to="/auctions">View all actions</HOS.ViewAllButton>
         </HOS.ContainerAllColumns>
