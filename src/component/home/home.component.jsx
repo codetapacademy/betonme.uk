@@ -6,42 +6,7 @@ import { AuctionCard } from "../auction-card";
 import * as HOS from "./home.style";
 
 export const Home = () => {
-  const [name, setName] = useState("");
-  const [nameList, setNameList] = useState([]);
-
-  //Snapchot for firebase with for each
-  useEffect(() => {
-    db.collection("hahahe").onSnapshot((snap) => {
-      let list = [];
-      
-      snap.forEach((doc) => {
-        list.push({
-          id: doc.id,
-          ...doc.data(),
-        });
-      });
-      setNameList(list);
-    });
-  }, []);
   
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setName(value);
-    console.log(value);
-  };
-  const handlePress = (e) => {
-    if (e.charCode === 13) {
-      // Vreau sa il trimit la baza de date cand apas enter
-      db.collection("hahahe").add({
-        name,
-        anaaremere: Math.random() - 0.5 > 0,
-      });
-      // Vreau sa curat formularul
-      setName("");
-      e.target.focus();
-    }
-    console.log(e, Object.keys(e));
-  };
 
   const dispatch = useDispatch();
 
@@ -73,27 +38,6 @@ export const Home = () => {
           )}
         </HOS.PosterContent>
       </HOS.Poster>
-      <input
-        type="text"
-        value={name}
-        onChange={handleChange}
-        onKeyPress={handlePress}
-      />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gridGap: "10px",
-        }}
-      >
-        {nameList.map(({ anaaremere, id, name }) => (
-          <>
-            <div>{id}</div>
-            <div>{name}</div>
-            <div>{anaaremere ? "da" : "nu"}</div>
-          </>
-        ))}
-      </div>
       <HOS.ActionSectionTitle>
         <HOS.ActionSectionTitleSpan>Current</HOS.ActionSectionTitleSpan>Auctions
       </HOS.ActionSectionTitle>
