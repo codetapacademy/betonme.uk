@@ -4,7 +4,7 @@ import Image from "../../asset/images/bicycle.jpg";
 import { db } from "../../config/firebase";
 
 export const AuctionCard = ({ id }) => {
-  const [CardData, setCardData] = useState({});
+  const [cardData, setCardData] = useState({});
 
   useEffect(() => {
     db.collection("auctions")
@@ -18,11 +18,11 @@ export const AuctionCard = ({ id }) => {
       <ACS.ActionCardHeader>20:35:21</ACS.ActionCardHeader>
       <ACS.ActionCardBody>
         <ACS.ActionCardImage src={Image} />
-        <ACS.ProductName>{CardData?.title}</ACS.ProductName>
+        <ACS.ProductName>{cardData?.title}</ACS.ProductName>
         <ACS.PriceContainer>
           <ACS.Price>
             <ACS.PriceText>Start Price</ACS.PriceText>
-            <ACS.PriceValue>$ {CardData?.startingPrice}</ACS.PriceValue>
+            <ACS.PriceValue>$ {cardData?.startingPrice}</ACS.PriceValue>
           </ACS.Price>
           <ACS.Price>
             <ACS.Price>
