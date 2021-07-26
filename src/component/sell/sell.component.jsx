@@ -16,7 +16,7 @@ export const Sell = () => {
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
-        enebleReinitialize
+        enableReinitialize
       >
         {({ isValid }) => (
           <S.StyledForm>
