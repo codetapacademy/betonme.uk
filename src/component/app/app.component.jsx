@@ -15,7 +15,7 @@ import { Sell } from "../sell";
 import { AuctionPage } from "../auction-page";
 import { Footer } from "../footer";
 
-const App = () => {
+export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
@@ -32,4 +32,3 @@ const App = () => {
   );
 };
 
-export { App };
