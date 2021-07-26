@@ -9,16 +9,11 @@ export const Home = () => {
   const [name, setName] = useState("");
   const [nameList, setNameList] = useState([]);
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setName(value);
-    console.log(value);
-  };
   //Snapchot for firebase with for each
   useEffect(() => {
     db.collection("hahahe").onSnapshot((snap) => {
       let list = [];
-
+      
       snap.forEach((doc) => {
         list.push({
           id: doc.id,
@@ -28,7 +23,12 @@ export const Home = () => {
       setNameList(list);
     });
   }, []);
-
+  
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setName(value);
+    console.log(value);
+  };
   const handlePress = (e) => {
     if (e.charCode === 13) {
       // Vreau sa il trimit la baza de date cand apas enter
@@ -47,12 +47,7 @@ export const Home = () => {
 
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
 
-  const smartRandom = () => {
-    db.collection("haha").add({
-      name: Math.random() - 0.5 > 0 ? "Hihi" : "haHa",
-      areanamere: !isLoggedIn,
-    });
-  };
+  
 
   //Dispatch the action to the store(to the reducer)
   const logheazaMa = () => {
@@ -76,9 +71,6 @@ export const Home = () => {
           {isLoggedIn && (
             <HOS.PosterButton onClick={scoateMa}>LogOUT</HOS.PosterButton>
           )}
-          <HOS.PosterButton onClick={smartRandom}>
-            Add Random Data
-          </HOS.PosterButton>
         </HOS.PosterContent>
       </HOS.Poster>
       <input
