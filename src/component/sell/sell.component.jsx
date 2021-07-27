@@ -24,7 +24,7 @@ export const Sell = () => {
             <S.StyledSectionTitle>Object details</S.StyledSectionTitle>
             <Field name="title" id="title">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>Auction Title</S.StyledLabel>
                   <S.StyledInput
                     type="text"
@@ -32,28 +32,28 @@ export const Sell = () => {
                     {...field}
                   />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             <Field name="images" id="images">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>Images</S.StyledLabel>
                   <S.StyledInput type="text" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             <Field name="description" id="description">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>Description</S.StyledLabel>
                   <S.StyledTextArea
                     {...field}
                     placeholder="Try to write something that you wish you will find if you read this"
                   ></S.StyledTextArea>
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             <Field name="startingPrice" id="startingPrice">
@@ -80,29 +80,29 @@ export const Sell = () => {
             <S.StyledSectionTitle>Contact info</S.StyledSectionTitle>
             <Field name="city" id="city">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>Your city</S.StyledLabel>
                   <S.StyledInput type="text" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             <Field name="email" id="email">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>E-mail address</S.StyledLabel>
                   <S.StyledInput type="mail" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             <Field name="phone" id="phone">
               {({ field, meta }) => (
-                <div>
+                <>
                   <S.StyledLabel>Phone number</S.StyledLabel>
                   <S.StyledInput type="tel" {...field} />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
-                </div>
+                </>
               )}
             </Field>
             {isValid && <div>is valid e true</div>}
