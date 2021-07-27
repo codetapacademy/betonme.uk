@@ -42,10 +42,9 @@ export const Home = () => {
       <HOS.Poster>
         <HOS.PosterContent>
           <HOS.PosterText>The best place to buy and sell!</HOS.PosterText>
-          {!isLoggedIn && (
+          {!isLoggedIn ? (
             <HOS.PosterButton onClick={logheazaMa}>Register</HOS.PosterButton>
-          )}
-          {isLoggedIn && (
+          ) : (
             <HOS.PosterButton onClick={scoateMa}>LogOUT</HOS.PosterButton>
           )}
         </HOS.PosterContent>

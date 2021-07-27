@@ -12,7 +12,6 @@ export const SignIn = ({ closeSignIn }) => {
       const {
         user: { uid, displayName, photoURL, email },
       } = await auth.signInWithPopup(GitHubProvider);
-      console.log(uid, displayName, photoURL, email);
       dispatch(setUser({ uid, displayName, photoURL, email }));
       closePopUp();
     } catch (error) {
@@ -22,17 +21,11 @@ export const SignIn = ({ closeSignIn }) => {
   const userData = useSelector(({ user }) => user.userData);
 
   //Function to close the pop up for sign in
-  const closePopUp = () => {
-    if (userData != null) {
-      closeSignIn();
-    }
-  };
+  const closePopUp = () => userData && closeSignIn()
 
   const handleSignOut = async () => {
     try {
-      const result = await auth.signOut();
       dispatch(setUser(null));
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
