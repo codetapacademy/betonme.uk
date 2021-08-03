@@ -1,1 +1,1 @@
-export { AuctionPage } from './auction-page.component'
+export { AuctionPage } from "./auction-page.component";

@@ -9,19 +9,19 @@ body {
 }
 
 @font-face {
-  font-family: 'bet-on-me';
-  src:
-    url('./asset/font/bet-on-me.ttf?or5w7m') format('truetype'),
-    url('./asset/font/bet-on-me.woff?or5w7m') format('woff'),
-    url('./asset/font/bet-on-me.svg?or5w7m#bet-on-me') format('svg');
+  font-family: "bet-on-me";
+  src: url("./asset/font/bet-on-me.ttf?or5w7m") format("truetype"),
+    url("./asset/font/bet-on-me.woff?or5w7m") format("woff"),
+    url("./asset/font/bet-on-me.svg?or5w7m#bet-on-me") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="bet-on-me"], [class*=" bet-on-me"] {
+[class^="bet-on-me"],
+[class*=" bet-on-me"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'bet-on-me' !important;
+  font-family: "bet-on-me" !important;
   /* speak: never; */
   font-style: normal;
   font-weight: normal;

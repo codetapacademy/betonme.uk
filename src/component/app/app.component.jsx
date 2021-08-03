@@ -1,23 +1,22 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { ThemeProvider } from 'styled-components'
-import theme from '../../config/theme'
-import * as S from './app.style'
+import React from "react";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import theme from "../../config/theme";
+import * as S from "./app.style";
 //Provider it's actually a react component
 //It's bassicaly the glue for react and redux
 
-import store from '../../store'
+import store from "../../store";
 //The store holds the state
-import { Menu } from '../menu'
-import { Home } from '../home'
-import { Auctions } from '../auctions'
-import { Sell } from '../sell'
-import { AuctionPage } from '../auction-page'
-import { Footer } from '../footer'
+import { Menu } from "../menu";
+import { Home } from "../home";
+import { Auctions } from "../auctions";
+import { Sell } from "../sell";
+import { AuctionPage } from "../auction-page";
+import { Footer } from "../footer";
 
-const App = () => {
-
-  return(
+export const App = () => {
+  return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Menu />
@@ -25,12 +24,10 @@ const App = () => {
           <Home path="/" />
           <Auctions path="auctions" />
           <Sell path="sell" />
-          <AuctionPage path="auctionPage" />
+          <AuctionPage path="/auction/:id" />
         </S.StyledRouter>
         <Footer />
       </Provider>
     </ThemeProvider>
-  )
-}
-
-export { App }
+  );
+};
