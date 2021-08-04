@@ -7,6 +7,8 @@ import image from "../../asset/images/phone.jpg";
 
 export const AuctionPage = () => {
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
+  const userId = useSelector(({ user }) => user.userData.uid);
+  console.log(userId);
   const { id } = useParams();
 
   const [auction, setAuction] = useState({});
@@ -17,6 +19,12 @@ export const AuctionPage = () => {
       .get()
       .then((snapshot) => setAuction(snapshot.data()));
   }, []);
+
+  const placeBit = () => {
+    db.collection("auctions").doc(id).update({
+      auctionWinner: userId,
+    })
+  }
 
   return (
     <S.AuctionPageBackground>
@@ -49,7 +57,7 @@ export const AuctionPage = () => {
             <S.LogInButton>Log In</S.LogInButton>
           </>
         ) : (
-          isLoggedIn && <S.BitButton>Place Bit</S.BitButton>
+          isLoggedIn && <S.BitButton onClick={placeBit}>Place Bit</S.BitButton>
         )}
       </S.RightContainer>
     </S.AuctionPageBackground>
