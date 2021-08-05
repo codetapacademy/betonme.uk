@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth, GitHubProvider } from "../../config/firebase";
 import { setUser } from "../../store/user.action";
@@ -6,6 +7,12 @@ import * as SIS from "./sign-in.style";
 
 export const SignIn = ({ closeSignIn }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onIdTokenChanged((user) => {
+      console.log(user)
+    })
+  }, []);
 
   const handleSignInWithGitHub = async () => {
     try {
@@ -21,10 +28,11 @@ export const SignIn = ({ closeSignIn }) => {
   const userData = useSelector(({ user }) => user.userData);
 
   //Function to close the pop up for sign in
-  const closePopUp = () => userData && closeSignIn()
+  const closePopUp = () => userData && closeSignIn();
 
   const handleSignOut = async () => {
     try {
+      auth.signOut()
       dispatch(setUser(null));
     } catch (error) {
       console.log(error);
