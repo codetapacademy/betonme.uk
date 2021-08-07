@@ -14,6 +14,7 @@ export const Sell = () => {
   today = mm + "/" + dd + "/" + yyyy;
 
   const onSubmit = (values, { resetForm }) => {
+    values.startDate = today;
     db.collection("auctions").add(values);
     resetForm();
   };
