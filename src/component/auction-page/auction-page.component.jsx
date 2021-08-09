@@ -8,16 +8,31 @@ import image from "../../asset/images/phone.jpg";
 export const AuctionPage = () => {
   const isLoggedIn = useSelector(({ user }) => user.isLoggedIn);
   const userId = useSelector(({ user }) => user?.userData?.uid);
-  console.log(userId);
   const { id } = useParams();
-
+  
   const [auction, setAuction] = useState({});
-
+  let startDate = auction.startDate;
+  
+  const CalculateTime = () => {
+    let now = new Date();
+    let difference = +now - +startDate;
+    return difference;
+  };
+  
+  const [timeLeft, setTimeLeft] = useState(CalculateTime());
+  
   useEffect(() => {
     db.collection("auctions")
-      .doc(id)
-      .onSnapshot((snapshot) => setAuction(snapshot.data()));
+    .doc(id)
+    .onSnapshot((snapshot) => setAuction(snapshot.data()));
   }, []);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(CalculateTime());
+    }, 1000);
+  });
+  console.log(timeLeft);
 
   const placeBit = () => {
     db.collection("auctions")
@@ -39,7 +54,7 @@ export const AuctionPage = () => {
         <S.StartingPrice>
           Starting Price: ${auction.startingPrice}
         </S.StartingPrice>
-        
+
         <S.StyledImage src={image} alt="Auction image" />
         <S.DescripitonTitle>Description</S.DescripitonTitle>
         <S.DescriptionContent>{auction.description}</S.DescriptionContent>
@@ -47,7 +62,7 @@ export const AuctionPage = () => {
 
       <S.RightContainer>
         <S.WhiteContainer>
-          <S.RemainingTime>Remaining time: 1d 12h</S.RemainingTime>
+          <S.RemainingTime>Remaining time: {timeLeft}</S.RemainingTime>
         </S.WhiteContainer>
 
         <S.WhiteContainer>

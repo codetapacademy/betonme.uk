@@ -6,15 +6,15 @@ import { db } from "../../config/firebase";
 
 export const Sell = () => {
   let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  let yyyy = today.getFullYear();
+  // let dd = String(today.getDate()).padStart(2, "0");
+  // let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  // let yyyy = today.getFullYear();
 
-  //This will give today's date in the format of mm/dd/yyyy.
-  today = mm + "/" + dd + "/" + yyyy;
+  // //This will give today's date in the format of mm/dd/yyyy.
+  // today = mm + "/" + dd + "/" + yyyy;
 
   const onSubmit = (values, { resetForm }) => {
-    values.startDate = today;
+    values.startDate = today.getTime();
     db.collection("auctions").add(values);
     resetForm();
   };
