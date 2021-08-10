@@ -12,17 +12,19 @@ export const AuctionPage = () => {
 
   const [auction, setAuction] = useState({});
   let startDate = auction.startDate;
+  let twoDays = new Date(172800000)
 
   const CalculateTime = () => {
     let now = new Date();
     let difference = +now - +startDate;
+    let difference2 = twoDays - difference
     let timeLeft = {};
-    if (difference > 0) {
+    if (difference2 > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        days: Math.floor(difference2 / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference2 / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference2 / 1000 / 60) % 60),
+        seconds: Math.floor((difference2 / 1000) % 60),
       };
       console.log("se intampla prostule")
     }
