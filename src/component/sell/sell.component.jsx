@@ -5,13 +5,11 @@ import { initialValues, validationSchema } from "./sell.form";
 import { db, ts } from "../../config/firebase";
 
 export const Sell = () => {
-
   const onSubmit = (values, { resetForm }) => {
     values.startDate = ts;
     db.collection("auctions").add(values);
     resetForm();
   };
-
 
   return (
     <S.StyledSell>

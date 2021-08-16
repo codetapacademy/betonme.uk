@@ -42,7 +42,6 @@ export const AuctionPage = () => {
       setTimeLeft(CalculateTime());
     }, 1000);
   });
-  console.log(timeLeft);
 
   const placeBit = () => {
     db.collection("auctions")
