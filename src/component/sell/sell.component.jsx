@@ -2,22 +2,16 @@ import React from "react";
 import * as S from "./sell.style";
 import { Formik, Field } from "formik";
 import { initialValues, validationSchema } from "./sell.form";
-import { db } from "../../config/firebase";
+import { db, ts } from "../../config/firebase";
 
 export const Sell = () => {
-  let today = new Date();
-  // let dd = String(today.getDate()).padStart(2, "0");
-  // let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  // let yyyy = today.getFullYear();
-
-  // //This will give today's date in the format of mm/dd/yyyy.
-  // today = mm + "/" + dd + "/" + yyyy;
 
   const onSubmit = (values, { resetForm }) => {
-    values.startDate = today.getTime();
+    values.startDate = ts;
     db.collection("auctions").add(values);
     resetForm();
   };
+
 
   return (
     <S.StyledSell>

@@ -11,22 +11,20 @@ export const AuctionPage = () => {
   const { id } = useParams();
 
   const [auction, setAuction] = useState({});
-  let startDate = auction.startDate;
-  let twoDays = new Date(172800000)
+  let twoDays = new Date(172800000);
+  let startDate = auction.startDate.seconds * 1000;
 
   const CalculateTime = () => {
     let now = new Date();
-    let difference = +now - +startDate;
-    let difference2 = twoDays - difference
+    let difference = twoDays - (+now - +startDate);
     let timeLeft = {};
-    if (difference2 > 0) {
+    if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference2 / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference2 / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference2 / 1000 / 60) % 60),
-        seconds: Math.floor((difference2 / 1000) % 60),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
       };
-      console.log("se intampla prostule")
     }
     return timeLeft;
   };
@@ -40,7 +38,7 @@ export const AuctionPage = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setTimeLeft(CalculateTime());
     }, 1000);
   });
@@ -74,7 +72,10 @@ export const AuctionPage = () => {
 
       <S.RightContainer>
         <S.WhiteContainer>
-          <S.RemainingTime>Remaining time: {timeLeft.days} days {timeLeft.hours} hours {timeLeft.minutes} minutes {timeLeft.seconds} seconds</S.RemainingTime>
+          <S.RemainingTime>
+            Remaining time: {timeLeft.days} days {timeLeft.hours} hours{" "}
+            {timeLeft.minutes} minutes {timeLeft.seconds} seconds
+          </S.RemainingTime>
         </S.WhiteContainer>
 
         <S.WhiteContainer>
