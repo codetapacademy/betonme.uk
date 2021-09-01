@@ -42,26 +42,6 @@ export const Auctions = () => {
         <SA.ButtonB>2</SA.ButtonB>
         <SA.ButtonB>3</SA.ButtonB>
       </SA.ButtonsWrapper>
-      <SA.SectionTitle>Future Auctions</SA.SectionTitle>
-      <SA.StyledDivider />
-      <SA.StyledGrid>
-        <SA.StyledFilter>
-          <SA.FilterTitle>Order By</SA.FilterTitle>
-          <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
-          <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
-        </SA.StyledFilter>
-        <AuctionCard />
-        <AuctionCard />
-        <AuctionCard />
-        <AuctionCard />
-      </SA.StyledGrid>
-      <SA.ButtonsWrapper>
-        <SA.ButtonB>1</SA.ButtonB>
-        <SA.ButtonB>2</SA.ButtonB>
-        <SA.ButtonB>3</SA.ButtonB>
-        <SA.ButtonB>4</SA.ButtonB>
-        <SA.ButtonB>5</SA.ButtonB>
-      </SA.ButtonsWrapper>
     </SA.AuctionsSection>
   );
 };

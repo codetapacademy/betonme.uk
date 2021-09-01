@@ -27,7 +27,7 @@ export const AuctionCard = ({ id }) => {
           <ACS.Price>
             <ACS.Price>
               <ACS.PriceText>Current Price</ACS.PriceText>
-              <ACS.PriceValue>$ 235.00</ACS.PriceValue>
+              <ACS.PriceValue>$ {cardData?.currentPrice}</ACS.PriceValue>
             </ACS.Price>
           </ACS.Price>
         </ACS.PriceContainer>

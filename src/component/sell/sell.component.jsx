@@ -6,7 +6,8 @@ import { db, ts } from "../../config/firebase";
 
 export const Sell = () => {
   const onSubmit = (values, { resetForm }) => {
-    values.startDate = ts;
+    values.startDate = new Date().getTime();
+    values.startDateTS = ts;
     db.collection("auctions").add(values);
     resetForm();
   };

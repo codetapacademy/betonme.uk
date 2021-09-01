@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "@reach/router";
 import { db } from "../../config/firebase";
+import { CalculateTime } from "../../utils/calculate-time"
 import * as S from "./auction-page.style";
 import image from "../../asset/images/phone.jpg";
 
@@ -11,25 +12,9 @@ export const AuctionPage = () => {
   const { id } = useParams();
 
   const [auction, setAuction] = useState({});
-  let twoDays = new Date(172800000);
-  let startDate = auction.startDate.seconds * 1000;
+  let startDate = auction.startDate;
 
-  const CalculateTime = () => {
-    let now = new Date();
-    let difference = twoDays - (+now - +startDate);
-    let timeLeft = {};
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(CalculateTime());
+  const [timeLeft, setTimeLeft] = useState(CalculateTime(startDate));
 
   useEffect(() => {
     db.collection("auctions")
@@ -39,7 +24,7 @@ export const AuctionPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setTimeLeft(CalculateTime());
+      setTimeLeft(CalculateTime(startDate));
     }, 1000);
   });
 
@@ -48,7 +33,8 @@ export const AuctionPage = () => {
       .doc(id)
       .set(
         {
-          auctionWinner: userId,
+          auctionWinnerId: userId,
+          // auctionWinnerMail: userEmaik
           currentPrice: (+auction.currentPrice || +auction.startingPrice) * 1.2,
         },
         { merge: true }
