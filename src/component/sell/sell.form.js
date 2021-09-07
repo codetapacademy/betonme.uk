@@ -30,7 +30,7 @@ export const validationSchema = yup.object().shape({
     .string()
     .min(6, "nu taia frunza la caini")
     .required("we need your first name"),
-  images: yup.string().required("we need your last name now !!"),
+  images: yup.mixed(),
   description: yup
     .string()
     .max(100, "suntem creativi")

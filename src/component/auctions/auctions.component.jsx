@@ -5,6 +5,7 @@ import { AuctionCard } from "../auction-card";
 
 export const Auctions = () => {
   const [auctionsList, setAuctionsList] = useState([]);
+  const [howToOrder, setHowToOrder] = useState("currentPrice");
 
   useEffect(() => {
     db.collection("auctions").onSnapshot((snap) => {
@@ -20,6 +21,37 @@ export const Auctions = () => {
     });
   }, []);
 
+  let orderByStartingPriceLTH = () => {
+    db.collection("auctions")
+      .orderBy("startingPrice")
+      .onSnapshot((snap) => {
+        let list = [];
+
+        snap.forEach((doc) => {
+          list.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setAuctionsList(list);
+      });
+  };
+  let orderByStartingPriceHTL = () => {
+    db.collection("auctions")
+      .orderBy("startingPrice", "desc")
+      .onSnapshot((snap) => {
+        let list = [];
+
+        snap.forEach((doc) => {
+          list.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setAuctionsList(list);
+      });
+  };
+
   return (
     <SA.AuctionsSection>
       <SA.FirstImage />
@@ -30,8 +62,12 @@ export const Auctions = () => {
           <SA.FilterTitle>Order By</SA.FilterTitle>
           <SA.StyledOrderBy>Current Price - high to low</SA.StyledOrderBy>
           <SA.StyledOrderBy>Current Price - low to high</SA.StyledOrderBy>
-          <SA.StyledOrderBy>Start Price - high to low</SA.StyledOrderBy>
-          <SA.StyledOrderBy>Start Price - low to high</SA.StyledOrderBy>
+          <SA.StyledOrderBy onClick={orderByStartingPriceHTL}>
+            Start Price - high to low
+          </SA.StyledOrderBy>
+          <SA.StyledOrderBy onClick={orderByStartingPriceLTH}>
+            Start Price - low to high
+          </SA.StyledOrderBy>
         </SA.StyledFilter>
         {auctionsList.map(({ id }) => {
           return <AuctionCard key={id} id={id} />;

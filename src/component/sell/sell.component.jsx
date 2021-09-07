@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as S from "./sell.style";
 import { Formik, Field } from "formik";
 import { initialValues, validationSchema } from "./sell.form";
-import { db, ts } from "../../config/firebase";
+import { db, ts, storageRef, storage } from "../../config/firebase";
 
 export const Sell = () => {
+  const [image, setImage] = useState(null);
+  const preview = useRef();
+  const imageName = useRef();
+
   const onSubmit = (values, { resetForm }) => {
     values.startDate = new Date().getTime();
     values.startDateTS = ts;
     db.collection("auctions").add(values);
     resetForm();
+
+    uploadImage();
+  };
+
+  let uploadImage = () => {
+    storage.ref(`images/${image.name}`).put(image);
+  };
+
+  let oFunctie = (event) => {
+    console.log(event.target.files[0].name);
+    preview.current.src = URL.createObjectURL(event.target.files[0]);
+    // imageName.current.src = event.target.files[0].name;
+    // console.log(preview.current.src);
+    // setImage(preview.current.src);
+    setImage(event.target.files[0]);
+    // let auctionImageRef = storageRef.child(`${preview.current.src}`);
+    // let auctionImagePath = storageRef.child(`images/${preview.current.src}`);
   };
 
   return (
@@ -41,7 +62,8 @@ export const Sell = () => {
               {({ field, meta }) => (
                 <>
                   <S.StyledLabel>Images</S.StyledLabel>
-                  <S.StyledInput type="text" {...field} />
+                  <S.StyledInput type="file" {...field} onChange={oFunctie} />
+                  <img ref={preview} alt="" width="100" />
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </>
               )}
