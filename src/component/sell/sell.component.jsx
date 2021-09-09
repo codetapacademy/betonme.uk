@@ -7,11 +7,13 @@ import { db, ts, storageRef, storage } from "../../config/firebase";
 export const Sell = () => {
   const [image, setImage] = useState(null);
   const preview = useRef();
-  const imageName = useRef();
+  // const imageName = useRef();
 
   const onSubmit = (values, { resetForm }) => {
     values.startDate = new Date().getTime();
     values.startDateTS = ts;
+    values.auctionImagePath = image.name;
+    values.currentPrice = values.startingPrice;
     db.collection("auctions").add(values);
     resetForm();
 
@@ -23,7 +25,7 @@ export const Sell = () => {
   };
 
   let oFunctie = (event) => {
-    console.log(event.target.files[0].name);
+    // console.log(event.target.files[0].name);
     preview.current.src = URL.createObjectURL(event.target.files[0]);
     // imageName.current.src = event.target.files[0].name;
     // console.log(preview.current.src);
@@ -62,8 +64,15 @@ export const Sell = () => {
               {({ field, meta }) => (
                 <>
                   <S.StyledLabel>Images</S.StyledLabel>
-                  <S.StyledInput type="file" {...field} onChange={oFunctie} />
-                  <img ref={preview} alt="" width="100" />
+                  <S.StyledImagePreview ref={preview} alt="" />
+                  <S.StyledLabelFile>
+                    <S.StyledInputFile
+                      type="file"
+                      {...field}
+                      onChange={oFunctie}
+                    />
+                    Add image
+                  </S.StyledLabelFile>
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </>
               )}
@@ -131,9 +140,9 @@ export const Sell = () => {
             </Field>
             {isValid && <div>is valid e true</div>}
             <S.StyledFormSeparator />
-            <button type="submit" disabled={!isValid}>
-              Show me the ££££
-            </button>
+            <S.StyledSubmitButton type="submit" disabled={!isValid}>
+              Place auction
+            </S.StyledSubmitButton>
           </S.StyledForm>
         )}
       </Formik>

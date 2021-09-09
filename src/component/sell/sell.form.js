@@ -2,9 +2,8 @@ import * as yup from "yup";
 
 export const initialValues = {
   title: "",
-  images: "",
   description: "",
-  startingPrice: "",
+  startingPrice: 1,
   currency: "",
   city: "",
   email: "",
