@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { Form } from "formik";
 
+export const StyledImagePreview = styled.img`
+  display: block;
+  width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+`;
+
 export const StyledSell = styled.div`
   background-color: ${({ theme }) => theme.color.lighter};
   padding: 30px 200px;
@@ -72,21 +79,28 @@ export const StyledSectionTitle = styled.h2`
   color: ${({ theme }) => theme.color.darker};
 `;
 
-export const StyledSubmit = styled.input`
-  padding: 20px 100px;
-  font-size: 24px;
-  border-radius: 34px;
+export const StyledLabelFile = styled.label`
+  padding: 20px 20px;
+  font-size: 12px;
+  border-radius: 26px;
   border: none;
   box-shadow: 1px 2px 2px #000;
   color: ${({ theme }) => theme.color.secondary};
   background-color: ${({ theme }) => theme.color.main};
   transition: 250ms;
+  display: inline-block;
+  margin: 10px 0px;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.color.main};
     background-color: ${({ theme }) => theme.color.secondary};
     box-shadow: 2px 4px 4px #000;
   }
+`;
+
+export const StyledInputFile = styled.input`
+  display: none;
 `;
 
 export const StyledSubmitButton = styled.button`
@@ -98,6 +112,7 @@ export const StyledSubmitButton = styled.button`
   color: ${({ theme }) => theme.color.secondary};
   background-color: ${({ theme }) => theme.color.main};
   transition: 250ms;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.color.main};

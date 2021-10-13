@@ -16,6 +16,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
 export const storage = firebase.storage();
+export const storageRef = firebase.storage().ref();
 export const ts = firebase.firestore.FieldValue.serverTimestamp();
 export const auth = firebase.auth();
 export const GitHubProvider = new firebase.auth.GithubAuthProvider();

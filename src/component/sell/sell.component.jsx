@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as S from "./sell.style";
 import { Formik, Field } from "formik";
 import { initialValues, validationSchema } from "./sell.form";
-import { db } from "../../config/firebase";
+import { db, ts, storageRef, storage } from "../../config/firebase";
 
 export const Sell = () => {
+  const [image, setImage] = useState(null);
+  const preview = useRef();
+  // const imageName = useRef();
+
   const onSubmit = (values, { resetForm }) => {
+    values.startDate = new Date().getTime();
+    values.startDateTS = ts;
+    values.auctionImagePath = image.name;
+    values.currentPrice = values.startingPrice;
     db.collection("auctions").add(values);
     resetForm();
+
+    uploadImage();
+  };
+
+  let uploadImage = () => {
+    storage.ref(`images/${image.name}`).put(image);
+  };
+
+  let oFunctie = (event) => {
+    // console.log(event.target.files[0].name);
+    preview.current.src = URL.createObjectURL(event.target.files[0]);
+    // imageName.current.src = event.target.files[0].name;
+    // console.log(preview.current.src);
+    // setImage(preview.current.src);
+    setImage(event.target.files[0]);
+    // let auctionImageRef = storageRef.child(`${preview.current.src}`);
+    // let auctionImagePath = storageRef.child(`images/${preview.current.src}`);
   };
 
   return (
@@ -39,7 +64,15 @@ export const Sell = () => {
               {({ field, meta }) => (
                 <>
                   <S.StyledLabel>Images</S.StyledLabel>
-                  <S.StyledInput type="text" {...field} />
+                  <S.StyledImagePreview ref={preview} alt="" />
+                  <S.StyledLabelFile>
+                    <S.StyledInputFile
+                      type="file"
+                      {...field}
+                      onChange={oFunctie}
+                    />
+                    Add image
+                  </S.StyledLabelFile>
                   {meta.touched && meta.error && <div>error: {meta.error}</div>}
                 </>
               )}
@@ -107,9 +140,9 @@ export const Sell = () => {
             </Field>
             {isValid && <div>is valid e true</div>}
             <S.StyledFormSeparator />
-            <button type="submit" disabled={!isValid}>
-              Show me the ££££
-            </button>
+            <S.StyledSubmitButton type="submit" disabled={!isValid}>
+              Place auction
+            </S.StyledSubmitButton>
           </S.StyledForm>
         )}
       </Formik>

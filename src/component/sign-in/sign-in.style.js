@@ -61,12 +61,6 @@ export const GoogleButton = styled.button`
   border: 1px solid rgba(122, 122, 122, 0.25);
 `;
 
-export const TwittterButton = styled.button`
-  ${BasicButton}
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  background-color: #fff;
-  border: 1px solid rgba(122, 122, 122, 0.25);
-`;
 
 export const ButtonSignInIcon = styled.i`
   font-size: 18px;

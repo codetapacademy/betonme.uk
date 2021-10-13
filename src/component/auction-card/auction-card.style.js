@@ -43,6 +43,7 @@ export const PriceContainer = styled.div`
 
 export const Price = styled.div`
   text-align: center;
+  margin-left: 10px;
 `;
 
 export const PriceText = styled.p`
